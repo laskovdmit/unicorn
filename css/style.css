@@ -1003,7 +1003,7 @@ a {
     background-image: url("../img/whatsapp.png");
 }
 
-.callback {
+.callback__wrapper {
     background-color: #fff;
     border-radius: 15px;
 
@@ -1012,27 +1012,14 @@ a {
     width: 500px;
 }
 
-.callback::after,
-.callback::before {
-    content: "";
-
-    width: 20px;
-    height: 3px;
-
+.modal__close {
     position: absolute;
+    top: 0;
+    right: -30px;
 
-    top: 5px;
-    right: -25px;
+    cursor: pointer;
 
-    background-color: #555;
-}
-
-.callback::after {
-    transform: rotate(-45deg);
-}
-
-.callback::before {
-    transform: rotate(45deg);
+    font-size: 46px;
 }
 
 .callback-content {
@@ -1056,4 +1043,28 @@ a {
     display: block;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.privacy__wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 50px;
+
+    position: relative;
+
+    height: 80%;
+}
+
+.privacy-content {
+    overflow: hidden;
+    height: 100%;
+}
+
+.privacy-content__descr {
+    margin-top: 20px;
+    
+    overflow: scroll;
+
+    width: 900px;
+    height: 100%;
 }
