@@ -1,0 +1,59 @@
+.navigation {
+  background-color: #fff;
+}
+
+.navigation__site,
+.navigation__card {
+  @include ul-style;
+  text-align: center;
+}
+
+.navigation__button {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: -1px;
+
+  cursor: pointer;
+
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  color: $main-color;
+
+  background-color: inherit;
+  border: none;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+
+@media (min-width: $desktop-width) {
+  .navigation {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    background-color: $main-color;
+  }
+
+  .navigation__site {
+    display: flex;
+    flex-grow: 1;
+
+    li {
+    flex-basis: 25%;
+    }
+  }
+
+  .navigation__button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border: none;
+    border-bottom: 1px solid #fff;
+
+    color: #fff;
+  }
+}

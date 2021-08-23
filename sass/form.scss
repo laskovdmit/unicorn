@@ -1,0 +1,154 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input {
+  width: calc(100% - 14px);
+  height: 46px;
+  margin: 0;
+  padding: 6px;
+
+  font: inherit;
+
+  border: 1px solid $border-second-color;
+  border-radius: 3px;
+}
+
+.form__name {
+  margin-bottom: 10px;
+}
+
+.form__phone {
+  margin-bottom: 10px;
+}
+
+.form__wishes {
+  width: calc(100% - 14px);
+  height: 96px;
+  margin: 0;
+  padding: 6px;
+
+  font: inherit;
+
+  border: 1px solid $border-second-color;
+  border-radius: 3px;
+
+  resize: none;
+}
+
+.form__btn {
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+
+  display: block;
+
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.form__privacy {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form__privacy-check {
+  display: none;
+}
+
+.form__subtitle {
+  display: block;
+  box-sizing: border-box;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.form__subtitle::before {
+  content: "";
+
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 11px);
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #fff;
+  border: 1px solid $border-second-color;
+}
+
+.form__privacy-check:checked + .form__subtitle::after {
+  content: "";
+
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 1px;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: $main-color;
+}
+
+.form__privacy-link {
+  text-decoration: underline;
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .form__cal {
+    flex-basis: calc(50% - 10px);
+
+    padding: 5px;
+  }
+
+  .form__wishes {
+    height: calc(100% - 12px);
+  }
+
+  .form__phone {
+    margin-bottom: 0;
+  }
+
+  .form__subtitle {
+    padding-left: 20px;
+  }
+
+  .form__privacy {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .form__subtitle::before {
+    top: calc(50% - 9px);
+
+    width: 15px;
+    height: 15px;
+  }
+
+  .form__privacy-check:checked + .form__subtitle::after {
+    top: calc(50% - 8px);
+    left: 1px;
+
+    width: 15px;
+    height: 15px;
+  }
+}

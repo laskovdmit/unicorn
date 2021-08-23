@@ -1,0 +1,36 @@
+.about__wrapper {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.about__img {
+  width: 100%;
+  max-width: 370px;
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: $tablet-width) {
+  .about__img {
+    max-width: 470px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about__wrapper {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .about__owner {
+    flex-basis: 50%;
+  }
+
+  .about__img {
+    max-width: 570px;
+  }
+}

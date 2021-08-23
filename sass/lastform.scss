@@ -1,0 +1,30 @@
+.lastform__wrapper {
+  padding-top: 40px;
+}
+
+.lastform__title {
+  margin-bottom: 20px;
+}
+
+.lastform__subtitle {
+  margin-bottom: 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .lastform__form {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lastform__cal {
+    max-width: 320px;
+  }
+
+  .lastform__wrapper {
+    padding-top: 50px;
+  }
+
+  .lastform__number {
+    font-size: 26px;
+  }
+}

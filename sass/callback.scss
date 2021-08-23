@@ -1,0 +1,25 @@
+.callback__wrapper {
+  width: 90%;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.callback__content {
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.callback__title {
+  margin-bottom: 25px;
+}
+
+.callback__form {
+  flex-direction: column;
+}
+
+
+@media (min-width: $tablet-width) {
+  .callback__content {
+    padding-bottom: 40px;
+  }
+}

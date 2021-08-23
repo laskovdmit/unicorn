@@ -1,0 +1,18 @@
+.offer__advantages {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.offer__btn {
+  width: 260px;
+  height: 60px;
+
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: $desktop-width) {
+  .offer__advantages {
+    margin-bottom: 40px;
+  }
+}

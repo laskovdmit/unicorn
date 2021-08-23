@@ -1,0 +1,136 @@
+
+.questions__inner {
+  border-radius: 10px;
+  background-color: #fae4d8;
+
+  padding: 30px 20px;
+}
+
+.questions__title {
+  margin-bottom: 20px;
+}
+
+.questions__cols {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.questions__col {
+  flex-basis: 50%;
+}
+
+.questions__item {
+  padding: 15px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 2px solid #fff;
+}
+
+.questions__header {
+  position: relative;
+
+  display: block;
+  width: 100%;
+}
+
+.questions__header::before,
+.questions__header::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+
+  width: 10px;
+  height: 2px;
+  background-color: #000;
+}
+
+.questions__header::before {
+  right: -26px;
+  transform: rotate(-45deg);
+}
+
+.questions__header::after {
+  right: -20px;
+  transform: rotate(45deg);
+}
+
+.questions__item--show .questions__header::before {
+  transform: rotate(45deg);
+}
+
+.questions__item--show .questions__header::after {
+  transform: rotate(-45deg);
+}
+
+.questions__body {
+  display: none;
+  margin-top: 10px;
+}
+
+.questions__item--show .questions__body {
+  display: block;
+}
+
+.questions__desr {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.questions__btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  position: relative;
+  cursor: pointer;
+  flex-basis: 40px;
+
+  background-color: inherit;
+  border: none;
+}
+
+@media (min-width: $tablet-width) {
+  .questions__inner {
+    padding: 50px 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .questions__inner {
+    padding: 60px 40px;
+    padding-bottom: 60px;
+  }
+
+  .questions__wrapper {
+    padding: 80px 0;
+  }
+
+  .questions__title {
+    margin-bottom: 60px;
+  }
+
+  .questions__cols {
+    flex-direction: row;
+  }
+
+  .questions__col {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .questions__item {
+    margin-bottom: 40px;
+  }
+}
