@@ -25,6 +25,14 @@
   .notlike__form {
     padding-top: 50px;
   }
+
+  .notlike__cal {
+    max-width: 350px;
+  }
+
+  .notlike__form-content {
+    justify-content: center;
+  }
 }
 
 @media (min-width: $desktop-width) {

@@ -34,11 +34,11 @@
   <div class="menu header__menu">
     <nav class="navigation menu__navigation">
       <ul class="navigation__site">
-        <li><button class="navigation__button" type="button">Преимущества</button></li>
-        <li><button class="navigation__button" type="button">Каталог</button></li>
+        <li><button class="navigation__button navigation__button--active" type="button">Каталог</button></li>
         <li><button class="navigation__button" type="button">Отзывы</button></li>
+        <li><button class="navigation__button" type="button">Вопрос-ответ</button></li>
+        <li><button class="navigation__button" type="button">Как нас найти</button></li>
         <li><button class="navigation__button" type="button">Контакты</button></li>
-        <li><button class="navigation__button navigation__button--cart" type="button">Корзина</button></li>
       </ul>
     </nav>
   </div>
@@ -123,47 +123,47 @@
           <li><button class="showcase__btn btn">Premium</button></li>
         </ul>
         <div class="showcase__catalog">
-            <div class="product">
+            <div class="showcase__product product">
               <img class="product__photo" src="img/gift.jpg" width="250" height="250" alt="Набор Гнездышко Kinder">
               <div class="product__info">
                 <p class="product__name">Гнездышко Kinder</p>
                 <p class="product__descr">В составе: 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты и т.д.</p>
                 <div class="product__oldprice">3000 руб</div>
                 <div class="product__price">2000 руб</div>
-                <button class="product__addtocart btn" type="button">В корзину</button>
+                <button class="product__addtocart btn" type="button">Заказать</button>
                 <button class="product__about-btn btn" type="button">Подробнее</button>
               </div>
             </div>
-            <div class="product">
+            <div class="showcase__product product">
               <img class="product__photo" src="img/gift.jpg" width="250" height="250" alt="Набор Гнездышко Kinder">
               <div class="product__info">
                 <p class="product__name">Гнездышко Kinder</p>
                 <p class="product__descr">В составе: 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты и т.д.</p>
                 <div class="product__oldprice">3000 руб</div>
                 <div class="product__price">2000 руб</div>
-                <button class="product__addtocart btn" type="button">В корзину</button>
+                <button class="product__addtocart btn" type="button">Заказать</button>
                 <button class="product__about-btn btn" type="button">Подробнее</button>
               </div>
             </div>
-            <div class="product">
+            <div class="showcase__product product">
               <img class="product__photo" src="img/gift.jpg" width="250" height="250" alt="Набор Гнездышко Kinder">
               <div class="product__info">
                 <p class="product__name">Гнездышко Kinder</p>
                 <p class="product__descr">В составе: 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты и т.д.</p>
                 <div class="product__oldprice">3000 руб</div>
                 <div class="product__price">2000 руб</div>
-                <button class="product__addtocart btn" type="button">В корзину</button>
+                <button class="product__addtocart btn" type="button">Заказать</button>
                 <button class="product__about-btn btn" type="button">Подробнее</button>
               </div>
             </div>
-            <div class="product">
+            <div class="showcase__product product">
               <img class="product__photo" src="img/gift.jpg" width="250" height="250" alt="Набор Гнездышко Kinder">
               <div class="product__info">
                 <p class="product__name">Гнездышко Kinder</p>
                 <p class="product__descr">В составе: 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты и т.д.</p>
                 <div class="product__oldprice">3000 руб</div>
                 <div class="product__price">2000 руб</div>
-                <button class="product__addtocart btn" type="button">В корзину</button>
+                <button class="product__addtocart btn" type="button">Заказать</button>
                 <button class="product__about-btn btn" type="button">Подробнее</button>
               </div>
             </div>
@@ -179,25 +179,25 @@
         <div class="notlike__form">
           <h2 class="notlike__title title">Хотите изменить состав?</h2>
           <p class="notlike__subtitle subtitle">Если вы хотите изменить состав выбранного подарка или добавить больше сладостей, то заполните форму ниже - мы сделаем подарок по вашим пожеланиям:</p>
-          <form class="form" method="post">
-            <div class="form__cal">
-              <input class="form__input form__name" id="form__name" type="text" placeholder="Введите ваше имя">
+          <form class="form notlike__form-content" method="post">
+            <div class="form__cal notlike__cal">
+              <input class="form__input form__name" id="form__name" type="text" placeholder="Ваше имя">
               <label class="visually-hidden" for="form__name">Введите ваше имя</label>
-              <input class="form__input form__phone" id="form__phone" type="tel" placeholder="Введите ваш номер телефона">
+              <input class="form__input form__phone" id="form__phone" type="tel" placeholder="Ваш номер телефона">
               <label class="visually-hidden" for="form__phone">Введите ваш номер телефона</label>
             </div>
-            <div class="form__cal">
+            <div class="form__cal notlike__cal">
               <textarea class="form__wishes" id="form__wishes" placeholder="Пожелания по подарку"></textarea>
               <label class="visually-hidden" for="form__wishes">Ваши пожелания по подарку</label>
             </div>
-            <div class="form__cal">
+            <div class="form__cal notlike__cal">
               <button class="form__btn btn" type="submit">Перезвоните мне</button>
               <div class="form__privacy">
                 <input class="form__privacy-check" id="form__privacy-check" type="checkbox">
                 <label class="form__subtitle" for="form__privacy-check">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
               </div>
             </div>
-            <div class="form__cal">
+            <div class="form__cal notlike__cal">
               <div class="contact">
                 <a class="contact__number" href="tel:+79871401648">+7 (987) 140-16-48</a>
                 <p class="contact__text">Ежедневно с 08.00 до 22.00 <br> или свяжитесь в мессенджерах:</p>
@@ -320,9 +320,9 @@
       <p class="lastform__subtitle subtitle title--center">Оставьте свои контакты, мы перезвоним:</p>
       <form class="lastform__form form" method="post">
         <div class="form__cal lastform__cal">
-          <input class="form__input form__name" id="form__name--last" type="text" placeholder="Введите ваше имя">
+          <input class="form__input form__input--grey form__name" id="form__name--last" type="text" placeholder="Ваше имя">
           <label class="visually-hidden" for="form__name--last">Введите ваше имя</label>
-          <input class="form__input form__phone" id="form__phone--last" type="tel" placeholder="Введите ваш номер телефона">
+          <input class="form__input form__input--grey form__phone" id="form__phone--last" type="tel" placeholder="Ваш номер телефона">
           <label class="visually-hidden" for="form__phone--last">Введите ваш номер телефона</label>
           <button class="form__btn btn" type="submit">Перезвоните мне</button>
           <div class="form__privacy">
@@ -384,12 +384,12 @@
       <form class="callback__form form" method="post">
         <div class="form__cal">
           <label class="visually-hidden" for="form__name--callback">Ваше имя</label>
-          <input class="form__input form__name" id="form__name--callback" type="text" name="name" placeholder="Ваше имя">
+          <input class="form__input form__input--grey form__name" id="form__name--callback" type="text" name="name" placeholder="Ваше имя">
           <label class="visually-hidden" for="form__phone--callback">Ваш телефон</label>
-          <input class="form__phone form__input" id="form__phone--callback" type="tel" name="phone" placeholder="+7 123 456-78-90">
+          <input class="form__input form__input--grey form__phone" id="form__phone--callback" type="tel" name="phone" placeholder="Ваш номер телефона">
         </div>
         <div class="form__cal">
-          <button class="form__btn btn" type="submit">Перезвоните мне</button>
+          <button class="form__btn form__btn--form btn" type="submit">Перезвоните мне</button>
           <div class="form__privacy">
             <input class="form__privacy-check" id="form__privacy-check--callback" type="checkbox">
             <label class="form__subtitle" for="form__privacy-check--callback">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
@@ -409,6 +409,108 @@
       <div class="privacy__btn btn privacy__close">Принимаю</div>
     </div>
     <div class="privacy__close modal__close">&times;</div>
+  </div>
+</section>
+<section class="details modal modal--details visually-hidden">
+  <div class="details__wrapper modal__wrapper">
+    <div class="details__content product">
+      <h2 class="visually-hidden">Подробности о товаре</h2>
+      <div class="details__photo swiper">
+        <div class="swiper__window">
+          <div class="swiper__wrapper swiper__wrapper-big">
+            <div class="swiper__slide swiper__slide-big">
+              <img class="swiper__img" src="img/owner-mobile.jpg" alt="Сердце киндер">
+            </div>
+            <div class="swiper__slide swiper__slide-big">
+              <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+            </div>
+            <div class="swiper__slide swiper__slide-big">
+              <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+            </div>
+            <div class="swiper__slide swiper__slide-big">
+              <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+            </div>
+          </div>
+          </div>
+        <div class="swiper__wrapper swiper__wrapper-min">
+          <div class="swiper__slide swiper__slide-min swiper__slide-min--active">
+            <img class="swiper__img" src="img/review3.jpg" alt="Сердце киндер">
+          </div>
+          <div class="swiper__slide swiper__slide-min">
+            <img class="swiper__img" src="img/owner-mobile.jpg" alt="Сердце киндер">
+          </div>
+          <div class="swiper__slide swiper__slide-min">
+            <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+          </div>
+          <div class="swiper__slide swiper__slide-min">
+            <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+          </div>
+        </div>
+      </div>
+      <div class="details__info product__info">
+        <p class="product__name product__name--form">Гнездышко Kinder</p>
+        <p class="product__descr product__descr--form">В составе: 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты, 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты, 20 шоколадок Kinder, 5 Kinder Surprise, декоративные ленты и т.д.</p>
+        <div class="product__oldprice product__oldprice--form">3000 руб</div>
+        <div class="product__price product__price--form">2000 руб</div>
+        <button class="product__addtocart product__addtocart--form btn" type="button">Заказать</button>
+      </div>
+    </div>
+    <div class="details__close modal__close">&times;</div>
+  </div>
+</section>
+<section class="purchase modal modal--purchase visually-hidden">
+  <div class="purchase__wrapper modal__wrapper">
+    <div class="purchase__content product">
+      <h2 class="visually-hidden">Оформление заказа</h2>
+      <div class="purchase__photo">
+        <img class="purchase__img" src="img/gift0.jpg" alt="Сердце киндер">
+      </div>
+      <div class="purchase__additional additional">
+        <p class="additional__title">Добавить</p>
+        <div class="additional__wrapper">
+          <div class="additional__item">
+            <input class="additional__input" id="additional__bear" type="checkbox">
+            <label class="additional__desr additional__desr--bear" for="additional__bear">
+              <p class="additional__subtitle">Плюшевая игрушка</p>
+              <p class="additional__price">от 500 руб.</p>
+            </label>
+          </div>
+          <div class="additional__item">
+            <input class="additional__input" id="purchase__sweet" type="checkbox">
+            <label class="additional__desr additional__desr--sweet" for="purchase__sweet">
+              <p class="additional__subtitle">Больше конфет</p>
+              <p class="additional__price">от 200 руб.</p>
+            </label>
+          </div>
+          <div class="additional__item">
+            <input class="additional__input" id="purchase__card" type="checkbox">
+            <label class="additional__desr additional__desr--card" for="purchase__card">
+              <p class="additional__subtitle">Открытка</p>
+              <p class="additional__price">+0 руб.</p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="purchase__info product__info">
+        <p class="product__name product__name--form">Гнездышко Kinder</p>
+        <div class="product__oldprice product__oldprice--form">3000 руб</div>
+        <div class="product__price product__price--form">2000 руб</div>
+        <form class="purchase__form form">
+          <div class="form__cal purchase__cal">
+            <input class="purchase__input form__input form__name" id="form__name--purchase" type="text" placeholder="Ваше имя">
+            <label class="visually-hidden" for="form__name--purchase">Ваше имя</label>
+            <input class="purchase__input form__input form__phone" id="form__phone--purchase" type="tel" placeholder="Ваш номер телефона">
+            <label class="visually-hidden" for="form__phone--purchase">Ваш номер телефона</label>
+            <button class="form__btn form__btn--form btn" type="submit">Заказать</button>
+            <div class="purchase__privacy form__privacy">
+              <input class="form__privacy-check" id="form__privacy-check--purchase" type="checkbox">
+              <label class="form__subtitle" for="form__privacy-check--purchase">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="purchase__close modal__close">&times;</div>
   </div>
 </section>
 

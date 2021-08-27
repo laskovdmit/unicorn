@@ -1,10 +1,24 @@
 'use strict';
 
+//Появление меню на десктопе
+window.addEventListener('scroll', () => {
+  if (window.innerWidth > 960 && window.pageYOffset > 800) {
+    menu.classList.remove('header__menu--none');
+    menu.classList.add('header__menu--block');
+  } else if (window.innerWidth > 940 && window.pageYOffset < 800) {
+    menu.classList.remove('header__menu--block');
+    menu.classList.add('header__menu--none');
+  } else {
+    menu.classList.remove('header__menu--block');
+    menu.classList.remove('header__menu--none');
+  }
+});
+
+
 // Открытие и закрытие меню
 const menuBtn = document.querySelector('.header__burger'),
       menu = document.querySelector('.menu'),
-      header = document.querySelector('.header'),
-      fisrtScreen = document.querySelector('.promo');
+      header = document.querySelector('.header');
 
 menuBtn.addEventListener('click', () => {
   if (header.classList.contains('header--closed')) {
@@ -24,26 +38,11 @@ window.addEventListener('scroll', () => {
 });
 
 
-//Появление меню на десктопе
-window.addEventListener('scroll', () => {
-  if (window.innerWidth > 960 && window.pageYOffset > 800) {
-    menu.classList.remove('header__menu--none');
-    menu.classList.add('header__menu--block');
-  } else if (window.innerWidth > 940 && window.pageYOffset < 800) {
-    menu.classList.remove('header__menu--block');
-    menu.classList.add('header__menu--none');
-  } else {
-    menu.classList.remove('header__menu--block');
-    menu.classList.remove('header__menu--none');
-  }
-});
-
-
 //Показ часто задаваемых вопросов
 const question = document.querySelectorAll('.questions__item'),
       questionHeader = document.querySelectorAll('.questions__header');
 
-question.forEach((item, i) => {
+question.forEach(item => {
   item.addEventListener('click', () => {
     if (item.classList.contains('questions__item--show')) {
       item.classList.remove('questions__item--show');
@@ -53,67 +52,98 @@ question.forEach((item, i) => {
   });
 });
 
+//Открытие и закрытие модальных окон
+function toggleWindow (btns, window, closeBtn) {
+  btns.forEach(item => {
+    item.addEventListener('click', () => {
+      window.classList.remove('visually-hidden');
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === window) {
+      window.classList.add('visually-hidden');
+    }
+  });
+
+  if (closeBtn.length) {
+    closeBtn.forEach(item => {
+      item.addEventListener('click', () => {
+        window.classList.add('visually-hidden');
+      });
+    });
+  } else {
+    closeBtn.addEventListener('click', () => {
+      window.classList.add('visually-hidden');
+    });
+  }
+}
+
+
 //Политика конфеденциальности
 const privacyBtns = document.querySelectorAll('.privacy-policy'),
       modalPrivacy = document.querySelector('.modal--privacy'),
       closePrivacyBtns = document.querySelectorAll('.privacy__close');
 
-privacyBtns.forEach(item => {
-  item.addEventListener('click', () => {
-    modalPrivacy.classList.remove('visually-hidden');
-  });
-});
+toggleWindow(privacyBtns, modalPrivacy, closePrivacyBtns);
 
-modalPrivacy.addEventListener('click', (e) => {
-  if (e.target === modalPrivacy) {
-    modalPrivacy.classList.add('visually-hidden');
-  }
-});
-
-closePrivacyBtns.forEach(item => {
-  item.addEventListener('click', () => {
-    modalPrivacy.classList.add('visually-hidden');
-  });
-});
 
 //Форма обратного звонка
 const orderCallBtns = document.querySelectorAll('.order__call'),
       modalCall = document.querySelector('.modal--callback'),
       closeCallBtn = document.querySelector('.callback__close');
 
-orderCallBtns.forEach(item => {
-  item.addEventListener('click', () => {
-    modalCall.classList.remove('visually-hidden');
+toggleWindow(orderCallBtns, modalCall, closeCallBtn);
+
+
+//Кнопка "Подробнее" на всех товарах
+const detailsBtns = document.querySelectorAll('.product__about-btn'),
+      detailsWindow = document.querySelector('.details'),
+      detailsClose = document.querySelector('.details__close');
+
+toggleWindow(detailsBtns, detailsWindow, detailsClose);
+
+
+//Кнопка Заказать
+const purchaseBtns = document.querySelectorAll('.product__addtocart'),
+      purchaseWindow = document.querySelector('.purchase'),
+      purchaseCloseBtn = document.querySelector('.purchase__close');
+
+toggleWindow(purchaseBtns, purchaseWindow, purchaseCloseBtn);
+
+// Переключение фильтров
+const filterBtns = document.querySelectorAll('.showcase__btn');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (!btn.classList.contains('showcase__btn--active')) {
+      filterBtns.forEach(item => {
+        item.classList.remove('showcase__btn--active');
+      });
+      btn.classList.add('showcase__btn--active');
+    }
   });
-});
-
-modalCall.addEventListener('click', (e) => {
-  if (e.target === modalCall) {
-    modalCall.classList.add('visually-hidden');
-  }
-});
-
-closeCallBtn.addEventListener('click', () => {
-  modalCall.classList.add('visually-hidden');
 });
 
 
 //Анимация слайдера
-// const sliderList = document.querySelector('.slider__list'),
-//       sliderItem = document.querySelectorAll('.slider__unit'),
-//       prevSlide = document.querySelector('.slider__arrow-prev'),
-//       nextSlide = document.querySelector('.slider__arrow-next'),
-//       toggles = document.querySelector('.slider__toggles');
+  const sliderList = document.querySelector('.slider__list'),
+        sliderItem = document.querySelectorAll('.slider__unit'),
+        prevSlide = document.querySelector('.slider__arrow-prev'),
+        nextSlide = document.querySelector('.slider__arrow-next'),
+        toggles = document.querySelector('.slider__toggles');
 
-// let currentSlide = 0,
-//     sliderWidth = 0;
+  let currentSlide = 0,
+      sliderWidth = 0;
 
-// sliderItem.forEach(item => {
-//   toggles.innerHTML += `<li class="slider__toggle"></li>`;
-//   sliderWidth += 265;
-// });
+  sliderItem.forEach(item => {
+    toggles.innerHTML += `<li class="slider__toggle"></li>`;
+    sliderWidth += 265;
+  });
 
-// const toggle = document.querySelectorAll('.slider__toggle');
+const toggle = document.querySelectorAll('.slider__toggle');
+
+toggle[currentSlide].classList.add('slider__toggle--active');
 
 // function showCurrentSlide (i) {
 //   if (i < sliderItem.length - 3) {
