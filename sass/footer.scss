@@ -11,7 +11,10 @@
   align-items: center;
 }
 
-.footer__logo img {
+.footer__logo {
+  display: block;
+  cursor: pointer;
+
   width: 230px;
   height: 81px;
 
@@ -72,6 +75,11 @@
   text-align: center;
 
   display: block;
+
+  &:active,
+  &:focus {
+    color: #fff;
+  }
 }
 
 @media (min-width: $tablet-width) {

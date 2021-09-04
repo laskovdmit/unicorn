@@ -103,6 +103,9 @@
 
   display: flex;
   justify-content: space-between;
+
+  transition-property: transform;
+  transition-duration: 1s;
 }
 
 .slider__unit {
@@ -141,10 +144,23 @@
   width: 7px;
   height: 7px;
   margin: 7px;
+
+  position: relative;
   cursor: pointer;
 
   background-color: #999;
   border-radius: 50%;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: -7px;
+    left: -7px;
+
+    width: 21px;
+    height: 21px;
+  }
 
   &--active {
     background-color: $main-color;

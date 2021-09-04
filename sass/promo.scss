@@ -1,20 +1,19 @@
 .promo {
   padding-top: 80px;
 
+  overflow: hidden;
+
   background-image: url("/img/bg-top-mobile.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
 }
 
-.promo__decor {
-  display: none;
-}
-
 .promo__wrapper {
   padding-top: 20px;
   padding-bottom: 55px;
 
+  position: relative;
   display: flex;
   flex-direction: column;
 }

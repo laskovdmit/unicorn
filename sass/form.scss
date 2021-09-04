@@ -90,6 +90,11 @@
 }
 
 .form__privacy {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+
+  margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
   padding-left: 10px;
@@ -97,7 +102,18 @@
 }
 
 .form__privacy-check {
-  display: none;
+  position: absolute;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  top: calc(50% - 10px);
+  left: 11px;
+
+  width: 21px;
+  height: 21px;
 }
 
 .form__subtitle {
@@ -105,9 +121,9 @@
   box-sizing: border-box;
 
   position: relative;
+  cursor: pointer;
 
   width: 100%;
-  max-width: 220px;
   margin: 0 auto;
   padding-left: 30px;
   padding-top: 6px;
@@ -147,6 +163,10 @@
   background-size: contain;
 }
 
+.form__privacy-check:focus + .form__subtitle::before {
+  border-color: $main-color;
+}
+
 .form__privacy-link {
   text-decoration: underline;
 }
@@ -175,14 +195,14 @@
     max-width: 300px;
   }
 
-  .form__subtitle {
-    padding-left: 25px;
-    max-width: 290px;
-  }
-
   .form__privacy {
     margin-top: 5px;
     margin-bottom: 0;
+    max-width: 290px;
+  }
+
+  .form__subtitle {
+    padding-left: 25px;
   }
 
   .form__subtitle::before {

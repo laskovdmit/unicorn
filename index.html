@@ -8,25 +8,22 @@
     <title>Сладкие подарки из Kinder - Unicorn</title>
     <link href="css/normalize.css" type="text/css" rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dbab1e1d-250c-47fb-9b13-c5a16e6bb046&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body class="page">
 <header class="page__header header header--closed">
   <div class="header__wrapper page__container">
     <a class="header__adress" href="https://yandex.ru/maps/-/CCUiiPVa~D" target="_blank">Уфа, ул. Ленина 74</a>
-    <a class="header__logo" href="#">
-      <picture>
-        <source media="(min-width: 960px)" srcset="img/logo-desktop.png">
-        <source media="(min-width: 640px)" srcset="img/logo-tablet.png">
-        <img src="img/logo-mobile.png" alt="Логотип Unicorn">
-      </picture>
-    </a>
+    <picture>
+      <source media="(min-width: 960px)" srcset="img/logo-desktop.png">
+      <source media="(min-width: 640px)" srcset="img/logo-tablet.png">
+      <img class="header__logo" src="img/logo-mobile.png" alt="Логотип Unicorn">
+    </picture>
     <div class="header__nav">
       <div class="header__order-call">
         <a class="header__number" href="tel:+79871401648">+7 (987) 140-16-48</a>
         <button class="header__order-line order__call">Заказать звонок</button>
-        <a href="tel:+79871401648">
-          <button class="header__order-btn" type="button"></button>
-        </a>
+          <button class="header__order-btn" type="button"><a href="tel:+79871401648"></a></button>
       </div>
       <button class="header__burger" type="button"></button>
     </div>
@@ -34,22 +31,20 @@
   <div class="menu header__menu">
     <nav class="navigation menu__navigation">
       <ul class="navigation__site">
-        <li><button class="navigation__button navigation__button--active" type="button">Каталог</button></li>
-        <li><button class="navigation__button" type="button">Отзывы</button></li>
-        <li><button class="navigation__button" type="button">Вопрос-ответ</button></li>
-        <li><button class="navigation__button" type="button">Как нас найти</button></li>
-        <li><button class="navigation__button" type="button">Контакты</button></li>
+        <li><button data-nav="catalog" class="navigation__button navigation__button--active" type="button">Каталог</button></li>
+        <li><button data-nav="reviews" class="navigation__button" type="button">Отзывы</button></li>
+        <li><button data-nav="questions" class="navigation__button" type="button">Вопрос-ответ</button></li>
+        <li><button data-nav="where" class="navigation__button" type="button">Как нас найти</button></li>
+        <li><button data-nav="contacts" class="navigation__button" type="button">Контакты</button></li>
       </ul>
     </nav>
   </div>
 </header>
-<main class="page__main">
+<main class="page__main" id="main">
   <h1 class="visually-hidden">Сладкие подарки из Kinder - Unicorn</h1>
   <section class="promo">
     <h2 class="visually-hidden">Уникальное предложение</h2>
     <div class="promo__wrapper page__container">
-      <div class="promo__decor promo__decor--1"></div>
-      <div class="promo__decor promo__decor--2"></div>
       <div class="promo__gift">
         <picture>
           <source media="(min-width: 960px)" srcset="img/gift-desktop.png">
@@ -112,7 +107,7 @@
       </div>
     </div>
   </section>
-  <section class="catalog">
+  <section data-section class="catalog">
     <div class="catalog__wrapper page__container">
       <h2 class="catalog__title title title--center">Каталог наших подарков</h2>
       <div class="showcase">
@@ -174,26 +169,28 @@
   </section>
   <section class="notlike">
     <div class="notlike__wrapper page__container">
+      <div class="decor decor__1 decor__1--notlike"></div>
+      <div class="decor decor__2 decor__2--notlike"></div>
       <div class="notlike__inner inner">
         <div class="notlike__bg"></div>
         <div class="notlike__form">
           <h2 class="notlike__title title">Хотите изменить состав?</h2>
           <p class="notlike__subtitle subtitle">Если вы хотите изменить состав выбранного подарка или добавить больше сладостей, то заполните форму ниже - мы сделаем подарок по вашим пожеланиям:</p>
-          <form class="form notlike__form-content" method="post">
+          <form class="form notlike__form-content" method="post" action="https://echo.htmlacademy.ru/">
             <div class="form__cal notlike__cal">
-              <input class="form__input form__name" id="form__name" type="text" placeholder="Ваше имя">
+              <input class="form__input form__name" id="form__name" type="text" name="name" placeholder="Ваше имя" minlength="3" required>
               <label class="visually-hidden" for="form__name">Введите ваше имя</label>
-              <input class="form__input form__phone" id="form__phone" type="tel" placeholder="Ваш номер телефона">
+              <input class="form__input form__phone" id="form__phone" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" required>
               <label class="visually-hidden" for="form__phone">Введите ваш номер телефона</label>
             </div>
             <div class="form__cal notlike__cal">
-              <textarea class="form__wishes" id="form__wishes" placeholder="Пожелания по подарку"></textarea>
+              <textarea class="form__wishes" id="form__wishes" placeholder="Пожелания по подарку" name="whishes"></textarea>
               <label class="visually-hidden" for="form__wishes">Ваши пожелания по подарку</label>
             </div>
             <div class="form__cal notlike__cal">
               <button class="form__btn btn" type="submit">Перезвоните мне</button>
               <div class="form__privacy">
-                <input class="form__privacy-check" id="form__privacy-check" type="checkbox">
+                <input class="form__privacy-check" id="form__privacy-check" type="checkbox" name="privacy" required>
                 <label class="form__subtitle" for="form__privacy-check">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
               </div>
             </div>
@@ -215,10 +212,10 @@
     </div>
   </section>
   <section class="reviews">
-    <div class="reviews__wrapper page__container">
+    <div data-section class="reviews__wrapper page__container">
       <h2 class="reviews__title title title--center">Отзывы наших клиентов</h2>
       <div class="reviews__slider slider">
-        <div class="slider__arrow slider__arrow-prev"></div>
+        <div class="slider__arrow slider__arrow-prev" tabindex="0"></div>
         <div class="slider__wrapper">
           <ul class="slider__list">
             <li class="slider__unit">
@@ -263,7 +260,7 @@
             </li>
           </ul>
         </div>
-        <div class="slider__arrow slider__arrow-next"></div>
+        <div class="slider__arrow slider__arrow-next" tabindex="0"></div>
         <ul class="slider__toggles">
         </ul>
       </div>
@@ -271,11 +268,11 @@
   </section>
   <section class="questions">
     <div class="questions__wrapper page__container">
-      <div class="questions__inner">
+      <div data-section class="questions__inner">
         <h2 class="questions__title title title--center">Часто задаваемые вопросы</h2>
         <div class="questions__cols">
           <div class="questions__col">
-            <div class="questions__item">
+            <div class="questions__item" tabindex="0">
               <div class="questions__header">
                 <p class="questions__subtitle subtitle">Как осуществляется оплата?</p>
               </div>
@@ -283,7 +280,7 @@
                 <p class="questions__desr">Оплатить можете при получении курьером наличными либо по карте😃 Если получатель не Вы, то оплатить можете по ссылке которую пришлет Вам менеджер при оформлении заказа - это удобный способ оплатить дистанционно любой картой по всему миру 🍓</p>
               </div>
             </div>
-            <div class="questions__item">
+            <div class="questions__item" tabindex="0">
               <div class="questions__header">
                 <p class="questions__subtitle subtitle">Можно ли сделать заказ из другого города?</p>
               </div>
@@ -293,7 +290,7 @@
             </div>
           </div>
           <div class="questions__col">
-            <div class="questions__item">
+            <div class="questions__item" tabindex="0">
               <div class="questions__header">
                 <p class="questions__subtitle subtitle">Какие условия доставки?</p>
               </div>
@@ -301,12 +298,12 @@
                 <p class="questions__desr">Оплатить можете при получении курьером наличными либо по карте😃 Если получатель не Вы, то оплатить можете по ссылке которую пришлет Вам менеджер при оформлении заказа - это удобный способ оплатить дистанционно любой картой по всему миру 🍓</p>
               </div>
             </div>
-            <div class="questions__item">
+            <div class="questions__item" tabindex="0">
               <div class="questions__header">
                 <p class="questions__subtitle subtitle">Мне нужен подарок очень срочно. Вы успеете?</p>
               </div>
               <div class="questions__body">
-                <p class="questions__desr">Оплатить можете при получении курьером наличными либо по карте😃 Если получатель не Вы, то оплатить можете по ссылке которую пришлет Вам менеджер при оформлении заказа - это удобный способ оплатить дистанционно любой картой по всему миру 🍓</p>
+                <p class="questions__desr">Оплатить можете при получении курьером наличными либо по карте😃Оплатить можете при получении курьером наличными либо по карте😃 Если получатель не Вы, то оплатить можете по ссылке которую пришлет Вам менеджер при оформлении заказа - это удобный способ оплатить дистанционно любой картой по всему миру 🍓</p>
               </div>
             </div>
           </div>
@@ -318,15 +315,15 @@
     <div class="lastform__wrapper page__container">
       <h2 class="lastform__title title title--center">Хотите заказать подарок или есть дополнительные вопросы?</h2>
       <p class="lastform__subtitle subtitle title--center">Оставьте свои контакты, мы перезвоним:</p>
-      <form class="lastform__form form" method="post">
+      <form class="lastform__form form" method="post" action="https://echo.htmlacademy.ru/">
         <div class="form__cal lastform__cal">
-          <input class="form__input form__input--grey form__name" id="form__name--last" type="text" placeholder="Ваше имя">
+          <input class="form__input form__input--grey form__name" id="form__name--last" type="text" name="name" placeholder="Ваше имя" minlength="3" required>
           <label class="visually-hidden" for="form__name--last">Введите ваше имя</label>
-          <input class="form__input form__input--grey form__phone" id="form__phone--last" type="tel" placeholder="Ваш номер телефона">
+          <input class="form__input form__input--grey form__phone" id="form__phone--last" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" required>
           <label class="visually-hidden" for="form__phone--last">Введите ваш номер телефона</label>
           <button class="form__btn btn" type="submit">Перезвоните мне</button>
           <div class="form__privacy">
-            <input class="form__privacy-check" id="form__privacy-check--last" type="checkbox">
+            <input class="form__privacy-check" id="form__privacy-check--last" type="checkbox" name="privacy" required>
             <label class="form__subtitle" for="form__privacy-check--last">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
           </div>
         </div>
@@ -346,20 +343,16 @@
     </div>
   </section>
   <section class="map">
-    <div class="map__wrapper page__container">
+    <div data-section class="map__wrapper page__container">
       <h2 class="map__title title title--center">Где мы находимся?</h2>
-      <div class="map__content">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1ae5732f9f4881ad54d28c4c41b1b1ce9fb9779068b9278ab66cec0860dfe281&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
-      </div>
+      <div class="map__content" id="map"></div>
     </div>
   </section>
 </main>
-<footer class="page__footer footer">
+<footer data-section class="page__footer footer">
   <div class="footer__wrapper page__container">
     <a class="footer__adress" href="https://yandex.ru/maps/-/CCUiiPVa~D" target="_blank">Уфа, ул. Ленина 74</a>
-    <a class="footer__logo" href="#">
-      <img src="img/logo-desktop.png" width="230" height="81" alt="Логотип Unicorn">
-    </a>
+    <img class="footer__logo" src="img/logo-desktop.png" width="230" height="81" alt="Логотип Unicorn">
     <div class="footer__order-call">
       <a class="footer__number" href="tel:+79871401648">+7 (987) 140-16-48</a>
       <button class="footer__order-btn order__call" type="button">Заказать звонок</button>
@@ -368,7 +361,7 @@
   <div class="footer__info page__container">
     <div class="footer__legal">
       <p class="footer__owner-info">Ласькова Анастасия Владимировна. <br> Юр. адрес: г. Уфа, ул. Ленина 74</p>
-      <a class="footer__privacy privacy-policy">Политика конфидециальности</a>
+      <a class="footer__privacy privacy-policy" tabindex="0">Политика конфидециальности</a>
     </div>
     <div class="socials">
       <a class="socials__item socials__vk" href="https://vk.com/unicorn_ufa" target="_blank"></a>
@@ -381,22 +374,22 @@
   <div class="callback__wrapper modal__wrapper">
     <div class="callback__content">
       <h2 class="callback__title title title--center">Закажите звонок</h2>
-      <form class="callback__form form" method="post">
+      <form class="callback__form form" method="post" action="https://echo.htmlacademy.ru/">
         <div class="form__cal">
           <label class="visually-hidden" for="form__name--callback">Ваше имя</label>
-          <input class="form__input form__input--grey form__name" id="form__name--callback" type="text" name="name" placeholder="Ваше имя">
+          <input class="form__input form__input--grey form__name" id="form__name--callback" type="text" name="name" placeholder="Ваше имя" minlength="3" required>
           <label class="visually-hidden" for="form__phone--callback">Ваш телефон</label>
-          <input class="form__input form__input--grey form__phone" id="form__phone--callback" type="tel" name="phone" placeholder="Ваш номер телефона">
+          <input class="form__input form__input--grey form__phone" id="form__phone--callback" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" required>
         </div>
         <div class="form__cal">
           <button class="form__btn form__btn--form btn" type="submit">Перезвоните мне</button>
           <div class="form__privacy">
-            <input class="form__privacy-check" id="form__privacy-check--callback" type="checkbox">
+            <input class="form__privacy-check" id="form__privacy-check--callback" type="checkbox" name="privacy" required>
             <label class="form__subtitle" for="form__privacy-check--callback">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
           </div>
         </div>
       </form>
-      <div class="callback__close modal__close">&times;</div>
+      <div class="callback__close modal__close" tabindex="0">&times;</div>
     </div>
   </div>
 </section>
@@ -408,42 +401,44 @@
       1.1. «Персональные данные» - любая информация, относящаяся к прямо или косвенно определенному, или определяемому физическому лицу (субъекту персональных данных).<br>1.2. «Обработка персональных данных» - любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных.<br>1.3. «Конфиденциальность персональных данных» - обязательное для соблюдения Оператором или иным получившим доступ к персональным данным лицом требование не допускать их распространения без согласия субъекта персональных данных или наличия иного законного основания.<br>1.4. «Пользователь Сайта» – лицо, имеющее доступ к Сайту посредством сети Интернет и использующее информацию, материалы и продукты Сайта.<br>1.5. «Товар » - продукт, который Пользователь заказывает на Сайте и оплачивает через платёжные системы.<br>1.6. «Оператор персональных данных» или «Оператор» - Акционерное общество «Футбольный Клуб «Спартак-Москва».<br><br>2. Общие положения<br><br>2.1. Использование Сайта Пользователем означает согласие с Политикой конфиденциальности и условиями обработки персональных данных Пользователя.<br>2.2. В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование Сайта.<br>2.3. Политика конфиденциальности устанавливает обязательства Оператора по неразглашению и обеспечению режима защиты конфиденциальности персональных данных, которые Пользователь предоставляет по запросу Оператора при регистрации на Сайте, при подписке на информационную e-mail рассылку или при оформлении заказа.<br>2.4. Персональные данные, разрешённые к обработке в рамках настоящей Политики конфиденциальности, предоставляются Пользователем путём заполнения форм на Сайте и включают в себя следующую информацию:<br>2.4.1. фамилию, имя, отчество Пользователя;<br>2.4.2. контактный телефон Пользователя;<br>2.4.3. адрес электронной почты (e-mail) Пользователя;<br>2.4.4. адрес регистрации Пользователя (в случае приобретения Товара);<br>2.4.5. адрес доставки Товара (в случае приобретения Товара);<br>2.4.6. иные данные. указанные в формах на Сайте.</div>
       <div class="privacy__btn btn privacy__close">Принимаю</div>
     </div>
-    <div class="privacy__close modal__close">&times;</div>
+    <div class="privacy__close modal__close" tabindex="0">&times;</div>
   </div>
 </section>
 <section class="details modal modal--details visually-hidden">
   <div class="details__wrapper modal__wrapper">
+    <div class="decor decor__1"></div>
+    <div class="decor decor__2"></div>
     <div class="details__content product">
       <h2 class="visually-hidden">Подробности о товаре</h2>
       <div class="details__photo swiper">
         <div class="swiper__window">
           <div class="swiper__wrapper swiper__wrapper-big">
             <div class="swiper__slide swiper__slide-big">
-              <img class="swiper__img" src="img/owner-mobile.jpg" alt="Сердце киндер">
-            </div>
-            <div class="swiper__slide swiper__slide-big">
               <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
             </div>
             <div class="swiper__slide swiper__slide-big">
-              <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+              <img class="swiper__img" src="img/owner-tablet.jpg" alt="Сердце киндер">
             </div>
             <div class="swiper__slide swiper__slide-big">
-              <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+              <img class="swiper__img" src="img/client.png" alt="Сердце киндер">
+            </div>
+            <div class="swiper__slide swiper__slide-big">
+              <img class="swiper__img" src="img/review4.jpg" alt="Сердце киндер">
             </div>
           </div>
           </div>
         <div class="swiper__wrapper swiper__wrapper-min">
-          <div class="swiper__slide swiper__slide-min swiper__slide-min--active">
-            <img class="swiper__img" src="img/review3.jpg" alt="Сердце киндер">
-          </div>
-          <div class="swiper__slide swiper__slide-min">
-            <img class="swiper__img" src="img/owner-mobile.jpg" alt="Сердце киндер">
-          </div>
-          <div class="swiper__slide swiper__slide-min">
+          <div class="swiper__slide swiper__slide-min swiper__slide-min--active" tabindex="0">
             <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
           </div>
           <div class="swiper__slide swiper__slide-min">
-            <img class="swiper__img" src="img/gift0.jpg" alt="Сердце киндер">
+            <img class="swiper__img" src="img/owner-tablet.jpg" alt="Сердце киндер" tabindex="0">
+          </div>
+          <div class="swiper__slide swiper__slide-min">
+            <img class="swiper__img" src="img/client.png" alt="Сердце киндер" tabindex="0">
+          </div>
+          <div class="swiper__slide swiper__slide-min">
+            <img class="swiper__img" src="img/review4.jpg" alt="Сердце киндер" tabindex="0">
           </div>
         </div>
       </div>
@@ -455,11 +450,13 @@
         <button class="product__addtocart product__addtocart--form btn" type="button">Заказать</button>
       </div>
     </div>
-    <div class="details__close modal__close">&times;</div>
+    <div class="details__close modal__close" tabindex="0">&times;</div>
   </div>
 </section>
 <section class="purchase modal modal--purchase visually-hidden">
   <div class="purchase__wrapper modal__wrapper">
+    <div class="decor decor__1"></div>
+    <div class="decor decor__2"></div>
     <div class="purchase__content product">
       <h2 class="visually-hidden">Оформление заказа</h2>
       <div class="purchase__photo">
@@ -470,21 +467,21 @@
         <div class="additional__wrapper">
           <div class="additional__item">
             <input class="additional__input" id="additional__bear" type="checkbox">
-            <label class="additional__desr additional__desr--bear" for="additional__bear">
+            <label class="additional__desr additional__desr--bear" for="additional__bear" tabindex="0">
               <p class="additional__subtitle">Плюшевая игрушка</p>
               <p class="additional__price">от 500 руб.</p>
             </label>
           </div>
           <div class="additional__item">
             <input class="additional__input" id="purchase__sweet" type="checkbox">
-            <label class="additional__desr additional__desr--sweet" for="purchase__sweet">
+            <label class="additional__desr additional__desr--sweet" for="purchase__sweet" tabindex="0">
               <p class="additional__subtitle">Больше конфет</p>
               <p class="additional__price">от 200 руб.</p>
             </label>
           </div>
           <div class="additional__item">
             <input class="additional__input" id="purchase__card" type="checkbox">
-            <label class="additional__desr additional__desr--card" for="purchase__card">
+            <label class="additional__desr additional__desr--card" for="purchase__card" tabindex="0">
               <p class="additional__subtitle">Открытка</p>
               <p class="additional__price">+0 руб.</p>
             </label>
@@ -495,22 +492,22 @@
         <p class="product__name product__name--form">Гнездышко Kinder</p>
         <div class="product__oldprice product__oldprice--form">3000 руб</div>
         <div class="product__price product__price--form">2000 руб</div>
-        <form class="purchase__form form">
+        <form class="purchase__form form" method="post" action="https://echo.htmlacademy.ru">
           <div class="form__cal purchase__cal">
-            <input class="purchase__input form__input form__name" id="form__name--purchase" type="text" placeholder="Ваше имя">
+            <input class="purchase__input form__input form__name" id="form__name--purchase" type="text" name="name" placeholder="Ваше имя" minlength="3" required>
             <label class="visually-hidden" for="form__name--purchase">Ваше имя</label>
-            <input class="purchase__input form__input form__phone" id="form__phone--purchase" type="tel" placeholder="Ваш номер телефона">
+            <input class="purchase__input form__input form__phone" id="form__phone--purchase" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" required>
             <label class="visually-hidden" for="form__phone--purchase">Ваш номер телефона</label>
             <button class="form__btn form__btn--form btn" type="submit">Заказать</button>
             <div class="purchase__privacy form__privacy">
-              <input class="form__privacy-check" id="form__privacy-check--purchase" type="checkbox">
+              <input class="form__privacy-check" id="form__privacy-check--purchase" type="checkbox" name="privacy" required>
               <label class="form__subtitle" for="form__privacy-check--purchase">Я принимаю условия <a class="privacy-policy">передачи информации</a></label>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <div class="purchase__close modal__close">&times;</div>
+    <div class="purchase__close modal__close" tabindex="0">&times;</div>
   </div>
 </section>
 
