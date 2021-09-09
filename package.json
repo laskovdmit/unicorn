@@ -2,9 +2,10 @@
   "name": "unicorn",
   "version": "1.0.0",
   "description": "Gift shop",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "start": "npm run build && gulp watch"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,11 @@
   "homepage": "https://github.com/laskovdmit/unicorn#readme",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
     "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-watch": "^5.0.1",

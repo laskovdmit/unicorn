@@ -1,0 +1,238 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &--sent {
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+  }
+}
+
+.form__input {
+  width: 100%;
+  max-width: 338px;
+  height: 58px;
+
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  padding: 6px;
+  padding-left: 40px;
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: inset 1px 4px 4px 0 rgb(219, 219, 219, 0.4);
+
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: $main-color;
+  }
+
+  &--grey {
+    background-color: #f7f7f7;
+  }
+}
+
+.form__name {
+  margin-bottom: 10px;
+
+  background-image: url('/img/icon-name.svg');
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+.form__phone {
+  margin-bottom: 10px;
+
+  background-image: url('/img/icon-phone.svg');
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+.form__wishes {
+  width: 100%;
+  max-width: 338px;
+  height: 130px;
+
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: inset 1px 4px 4px 0 rgb(219, 219, 219, 0.4);
+
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: $main-color;
+  }
+
+  resize: none;
+}
+
+.form__btn {
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+
+  display: block;
+
+  margin: 0 auto;
+  margin-top: 20px;
+
+  &--form {
+    max-width: 280px;
+  }
+}
+
+.form__privacy {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form__privacy-check {
+  position: absolute;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  top: calc(50% - 10px);
+  left: 11px;
+
+  width: 21px;
+  height: 21px;
+}
+
+.form__subtitle {
+  display: block;
+  box-sizing: border-box;
+
+  position: relative;
+  cursor: pointer;
+
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.form__subtitle::before {
+  content: "";
+
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 11px);
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #fff;
+  border: 1px solid $border-second-color;
+}
+
+.form__privacy-check:checked + .form__subtitle::after {
+  content: "";
+
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 1px;
+
+  width: 20px;
+  height: 15px;
+
+  background-image: url('/img/icon-yes.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.form__privacy-check:focus + .form__subtitle::before {
+  border-color: $main-color;
+}
+
+.form__privacy-link {
+  text-decoration: underline;
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &--sent {
+      font-size: 34px;
+      line-height: 40px;
+    }
+  }
+
+  .form__cal {
+    flex-basis: 50%;
+    box-sizing: border-box;
+
+    padding: 5px;
+  }
+
+  .form__wishes {
+    height: 100%;
+  }
+
+  .form__phone {
+    margin-bottom: 0;
+  }
+
+  .form__btn--form {
+    max-width: 300px;
+  }
+
+  .form__privacy {
+    margin-top: 5px;
+    margin-bottom: 0;
+    max-width: 290px;
+  }
+
+  .form__subtitle {
+    padding-left: 25px;
+  }
+
+  .form__subtitle::before {
+    top: calc(50% - 9px);
+
+    width: 15px;
+    height: 15px;
+  }
+
+  .form__privacy-check:checked + .form__subtitle::after {
+    top: calc(50% - 6px);
+    left: 1px;
+
+    width: 15px;
+    height: 15px;
+  }
+}

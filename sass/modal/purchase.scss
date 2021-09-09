@@ -1,0 +1,137 @@
+.purchase__wrapper {
+  width: 80%;
+  min-width: 280px;
+}
+
+.purchase__content {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 15px;
+  padding: 40px 20px;
+
+  background-image: url('/img/bg-bottom-mobile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+}
+
+.purchase__photo {
+  width: 240px;
+  height: 240px;
+
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  background-color: rgb(236, 236, 236);
+}
+
+.purchase__img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.purchase__additional {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.purchase__info {
+  padding: 0;
+}
+
+.purchase__form {
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.purchase__input {
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.purchase__privacy {
+  margin-bottom: 0%;
+}
+
+@media (min-width: $tablet-width) {
+  .purchase__wrapper {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .purchase__content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    background-image: url('/img/bg-bottom-tablet.png');
+  }
+
+  .purchase__additional {
+    margin-bottom: 0;
+    margin-left: 10px;
+    max-width: 180px;
+  }
+
+  .purchase__info {
+    flex-grow: 1;
+    padding-top: 20px;
+  }
+
+  .purchase__photo {
+    min-width: 280px;
+    height: 280px;
+
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .purchase__wrapper {
+    max-width: 900px;
+  }
+
+  .purchase__content {
+    flex-direction: column;
+
+    padding: 30px;
+    max-height: 700px;
+
+    background-size: 165%;
+    background-image: url('/img/bg-bottom-desktop.jpg');
+  }
+
+  .purchase__info {
+    align-self: stretch;
+    margin-top: 107px;
+
+    min-width: 340px;
+  }
+
+  .purchase__photo {
+    min-width: 400px;
+    height: 400px;
+
+    margin: 0;
+    margin-right: 15px;
+  }
+
+  .purchase__additional {
+    margin-bottom: 0;
+    margin-left: 10px;
+
+    width: 100%;
+    max-width: 340px;
+    margin: 0;
+    margin-top: 10px;
+  }
+}

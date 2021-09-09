@@ -8,6 +8,11 @@
   &--center {
     text-align: center;
   }
+
+  &--sent {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 }
 
 .subtitle {
@@ -17,6 +22,10 @@
 
   &--center {
     text-align: center;
+  }
+
+  &--sent {
+    margin-bottom: 10px;
   }
 }
 
@@ -31,5 +40,10 @@
   .title {
     font-size: 40px;
     line-height: 48px;
+
+    &--sent {
+      font-size: 34px;
+      line-height: 40px;
+    }
   }
 }

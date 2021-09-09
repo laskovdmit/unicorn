@@ -1,0 +1,56 @@
+@media (min-width: $tablet-width) {
+  .decor {
+    position: absolute;
+    pointer-events: none;
+
+    display: none;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .decor__1 {
+    width: 215px;
+    height: 156px;
+
+    bottom: -40px;
+    left: -125px;
+
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    background-image: url('/img/decor-1.png');
+  }
+
+  .decor__2 {
+    width: 150px;
+    height: 167px;
+
+    top: -30px;
+    right: -105px;
+
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    background-image: url('/img/decor-2.png');
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .decor {
+    display: block;
+  }
+
+  .decor__1--notlike {
+    bottom: 20px;
+    left: -100px;
+  }
+
+  .decor__2--notlike {
+    top: 20px;
+    right: -85px;
+  }
+}
