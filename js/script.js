@@ -439,7 +439,7 @@ window.addEventListener('DOMContentLoaded', () => {
       balloonContentBody: 'Магазин сладких подарков Unicorn'
     }, {
       iconLayout: 'default#image',
-      iconImageHref: '/img/cursor.png',
+      iconImageHref: 'img/cursor.png',
       iconImageSize: [120, 120],
       iconImageOffset: [-60, -120]
     });
@@ -808,7 +808,7 @@ window.addEventListener('DOMContentLoaded', () => {
       allProductBtn.remove();
 
       const loadingImg = document.createElement('img');
-      loadingImg.src = '/img/spinner.svg';
+      loadingImg.src = 'img/spinner.svg';
       loadingImg.style.cssText = `
         display: block;
         margin: 0 auto;
@@ -844,7 +844,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('.form');
 
   const message = {
-    loading: '/img/spinner.svg',
+    loading: 'img/spinner.svg',
     success: 'Спасибо! Скоро мы с вами свяжемся',
     failure: 'Что-то пошло не так...'
   };

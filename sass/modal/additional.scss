@@ -62,7 +62,7 @@
   width: 30px;
   height: 30px;
 
-  background-image: url('img/icon-yes.svg');
+  background-image: url('../img/icon-yes.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -72,16 +72,16 @@
 }
 
 .additional__desr--bear::before {
-  background-image: url('img/bear.png');
+  background-image: url('../img/bear.png');
 }
 
 .additional__desr--sweet::before {
-  background-image: url('img/raffaello.png');
+  background-image: url('../img/raffaello.png');
 
 }
 
 .additional__desr--card::before {
-  background-image: url('img/card.png');
+  background-image: url('../img/card.png');
 }
 
 .additional__subtitle {
