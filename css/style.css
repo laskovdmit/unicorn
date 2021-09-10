@@ -1741,7 +1741,7 @@ a {
   }
 }
 .privacy {
-  z-index: 3;
+  z-index: 6;
 }
 
 .privacy__wrapper {
