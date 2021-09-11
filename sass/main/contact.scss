@@ -25,7 +25,17 @@
   justify-content: center;
 }
 
-.contact__icon {
+// .contact__icon {
+//   display: block;
+//   margin: 0 auto;
+// }
+
+.contact__icon svg{
+  width: 28px;
+  height: 28px;
+
+  fill: $main-color;
+
   display: block;
   margin: 0 auto;
 }

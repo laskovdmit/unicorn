@@ -5,13 +5,22 @@
 }
 
 .socials__item {
-  width: 40px;
-  height: 40px;
-  margin: 10px;
+  &--sent {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+    margin: 10px;
+  }
 }
 
 .socials__vk {
@@ -24,16 +33,4 @@
 
 .socials__whatsapp {
   background-image: url('../img/whatsapp.svg');
-}
-
-.socials__vk-black {
-  background-image: url('../img/vk-black.svg');
-}
-
-.socials__inst-black {
-  background-image: url('../img/instagram-black.svg');
-}
-
-.socials__whatsapp-black {
-  background-image: url('../img/whatsapp-black.svg');
 }

@@ -3,7 +3,7 @@
 
   overflow: hidden;
 
-  background-image: url("../img/bg-top-mobile.png");
+  background-image: url("../img/bg-top-mobile.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -38,7 +38,7 @@
 @media (min-width: $tablet-width) {
   .promo {
     padding-top: 90px;
-    background-image: url("../img/bg-top-tablet.png");
+    background-image: url("../img/bg-top-tablet.webp");
   }
 
   .promo__img {
@@ -49,7 +49,7 @@
 @media (min-width: $desktop-width) {
   .promo {
     padding-top: 120px;
-    background-image: url("../img/bg-top-desktop.jpg");
+    background-image: url("../img/bg-top-desktop.webp");
   }
 
   .promo__wrapper {

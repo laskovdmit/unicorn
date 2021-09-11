@@ -344,6 +344,16 @@ window.addEventListener('DOMContentLoaded', () => {
     buildToggle();
   });
 
+  sliderList.addEventListener('mousedown', () => {
+    sliderList.classList.remove('slider__list--grab');
+    sliderList.classList.add('slider__list--grabbing');
+  });
+
+  sliderList.addEventListener('mouseup', () => {
+    sliderList.classList.remove('slider__list--grabbing');
+    sliderList.classList.add('slider__list--grab');
+  });
+
 
   //Показ часто задаваемых вопросов
   const question = document.querySelectorAll('.questions__item'),
@@ -439,7 +449,7 @@ window.addEventListener('DOMContentLoaded', () => {
       balloonContentBody: 'Магазин сладких подарков Unicorn'
     }, {
       iconLayout: 'default#image',
-      iconImageHref: 'img/cursor.png',
+      iconImageHref: 'img/cursor.webp',
       iconImageSize: [120, 120],
       iconImageOffset: [-60, -120]
     });
@@ -743,20 +753,50 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  //Получение 4 товаров с сервера
-  fetch('db.json')
-  .then(data => data.json())
-  .then(res => {
-    for (let i = 0; i < 4; i++) {
-      new Product(
-        res.products[i].mainImg,
-        res.products[i].mainAltimg,
-        res.products[i].name,
-        res.products[i].fullDescr,
-        res.products[i].oldprice,
-        res.products[i].price,
-        res.products[i].allImgs
-      ).addProduct();
+  //Получение товаров
+  const showcase = document.querySelector('.showcase__catalog');
+
+  function showProduct(count) {
+    showcase.innerHTML = "";
+
+    fetch('db.json')
+    .then(data => data.json())
+    .then(res => {
+      for (let i = 0; i < count; i++) {
+        new Product(
+          res.products[i].mainImg,
+          res.products[i].mainAltimg,
+          res.products[i].name,
+          res.products[i].fullDescr,
+          res.products[i].oldprice,
+          res.products[i].price,
+          res.products[i].allImgs
+        ).addProduct();
+      }
+    });
+  }
+
+  let currentCountProduct = 0;
+
+  if (showcase.clientWidth >= 810 && showcase.clientWidth < 1080) {
+    currentCountProduct = 6;
+  } else {
+    currentCountProduct = 4;
+  }
+
+  showProduct(currentCountProduct);
+
+  window.addEventListener('resize', () => {
+    const allProductBtn = document.querySelector('.showcase__all-btn');
+
+    if (allProductBtn) {
+      if (showcase.clientWidth >= 810 && showcase.clientWidth < 1080 && currentCountProduct === 4) {
+        currentCountProduct = 6;
+        showProduct(currentCountProduct);
+      } else if ((showcase.clientWidth < 810 || showcase.clientWidth >= 1080) && currentCountProduct === 6) {
+        currentCountProduct = 4;
+        showProduct(currentCountProduct);
+      }
     }
   });
 
@@ -870,12 +910,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
       window.addEventListener('resize', () => {
         form.style.height = '';
-      });
+      }, {once: true});
 
       const statusLoading = document.createElement('img'),
             statusMessage = document.createElement('div');
-
-      statusMessage.style.maxWidth = "370px";
 
       statusLoading.src = message.loading;
       statusLoading.style.cssText = `
@@ -904,13 +942,14 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(data);
 
         statusLoading.remove();
+        statusMessage.style.maxWidth = "370px";
         statusMessage.innerHTML = `
           <div class="title title--center title--sent">${message.success}</div>
           <div class="subtitle subtitle--center subtitle--sent">Подписывайтесь на нас в соц. сетях:</div>
           <div class="socials">
-            <a class="socials__item socials__vk-black" href="https://vk.com/unicorn_ufa" target="_blank"></a>
-            <a class="socials__item socials__inst-black" href="https://www.instagram.com/unicorn_ufa/" target="_blank"></a>
-            <a class="socials__item socials__whatsapp-black" href="https://wa.me/79871401648" target="_blank"></a>
+            <a class="socials__item socials__item--sent socials__vk" href="https://vk.com/unicorn_ufa" target="_blank"></a>
+            <a class="socials__item socials__item--sent socials__inst" href="https://www.instagram.com/unicorn_ufa/" target="_blank"></a>
+            <a class="socials__item socials__item--sent socials__whatsapp" href="https://wa.me/79871401648" target="_blank"></a>
           </div>
         `;
         form.append(statusMessage);
@@ -918,6 +957,7 @@ window.addEventListener('DOMContentLoaded', () => {
       .catch(() => {
         statusLoading.remove();
 
+        statusMessage.style.maxWidth = "370px";
         statusMessage.innerHTML = `<div class="title title--center title--sent">${message.failure}</div>`;
         form.append(statusMessage);
       });

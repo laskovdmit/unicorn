@@ -77,19 +77,22 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/montserrat-regular.ttf");
+  src: url("../fonts/montserrat-regular.woff") format("woff");
+  src: url("../fonts/montserrat-regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/montserrat-semibold.ttf");
+  src: url("../fonts/montserrat-semibold.woff") format("woff");
+  src: url("../fonts/montserrat-semibold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Tinos";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/tinos-regular.ttf");
+  src: url("../fonts/tinos-regular.woff") format("woff");
+  src: url("../fonts/tinos-regular.woff2") format("woff2");
 }
 .visually-hidden {
   position: absolute;
@@ -384,7 +387,7 @@ a {
 .promo {
   padding-top: 80px;
   overflow: hidden;
-  background-image: url("../img/bg-top-mobile.png");
+  background-image: url("../img/bg-top-mobile.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -417,7 +420,7 @@ a {
 @media (min-width: 640px) {
   .promo {
     padding-top: 90px;
-    background-image: url("../img/bg-top-tablet.png");
+    background-image: url("../img/bg-top-tablet.webp");
   }
 
   .promo__img {
@@ -427,7 +430,7 @@ a {
 @media (min-width: 960px) {
   .promo {
     padding-top: 120px;
-    background-image: url("../img/bg-top-desktop.jpg");
+    background-image: url("../img/bg-top-desktop.webp");
   }
 
   .promo__wrapper {
@@ -942,13 +945,14 @@ a {
   .notlike__inner {
     display: flex;
     overflow: hidden;
+    min-height: 549px;
   }
 
   .notlike__bg {
     display: block;
     flex-basis: 50%;
     flex-grow: 1;
-    background-image: url("../img/client.png");
+    background-image: url("../img/client.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
@@ -978,7 +982,8 @@ a {
 .form--sent {
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .form__input {
@@ -1198,7 +1203,10 @@ a {
   justify-content: center;
 }
 
-.contact__icon {
+.contact__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #cb3132;
   display: block;
   margin: 0 auto;
 }
@@ -1301,6 +1309,11 @@ a {
   width: 250px;
   margin: 0 auto;
   overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  touch-action: pan-y;
   margin-bottom: 20px;
 }
 
@@ -1328,6 +1341,14 @@ a {
   transition-property: transform;
   transition-duration: 1s;
 }
+.slider__list--grab {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.slider__list--grabbing {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
 
 .slider__unit {
   border: 4px solid transparent;
@@ -1347,6 +1368,7 @@ a {
 .slider__photo {
   width: 250px;
   height: auto;
+  pointer-events: none;
   display: block;
   margin: auto;
 }
@@ -1527,7 +1549,7 @@ a {
   padding-bottom: 40px;
   margin-top: -100px;
   background-color: #fae4d8;
-  background-image: url("../img/bg-bottom-mobile.png");
+  background-image: url("../img/bg-bottom-mobile.webp");
   background-repeat: no-repeat;
   background-position: top;
 }
@@ -1547,7 +1569,7 @@ a {
     padding-top: 200px;
     padding-bottom: 60px;
     margin-top: 0;
-    background-image: url("../img/bg-bottom-tablet.png");
+    background-image: url("../img/bg-bottom-tablet.webp");
   }
 }
 @media (min-width: 960px) {
@@ -1678,25 +1700,11 @@ a {
   justify-content: space-around;
 }
 
-.socials__item {
+.socials__item svg {
   width: 40px;
   height: 40px;
+  fill: #fff;
   margin: 10px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-.socials__vk {
-  background-image: url("../img/vk.svg");
-}
-
-.socials__inst {
-  background-image: url("../img/instagram.svg");
-}
-
-.socials__whatsapp {
-  background-image: url("../img/whatsapp.svg");
 }
 
 .socials__vk-black {
@@ -1811,7 +1819,7 @@ a {
   flex-direction: column;
   border-radius: 15px;
   padding: 40px 20px;
-  background-image: url("../img/bg-bottom-mobile.png");
+  background-image: url("../img/bg-bottom-mobile.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -1844,7 +1852,7 @@ a {
     padding: 30px;
     background-size: cover;
     background-position: center -60%;
-    background-image: url("../img/bg-bottom-tablet.png");
+    background-image: url("../img/bg-bottom-tablet.webp");
   }
 }
 @media (min-width: 960px) {
@@ -1974,7 +1982,7 @@ a {
   flex-direction: column;
   border-radius: 15px;
   padding: 40px 20px;
-  background-image: url("../img/bg-bottom-mobile.png");
+  background-image: url("../img/bg-bottom-mobile.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -2032,7 +2040,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    background-image: url("../img/bg-bottom-tablet.png");
+    background-image: url("../img/bg-bottom-tablet.webp");
   }
 
   .purchase__additional {
@@ -2151,15 +2159,15 @@ a {
 }
 
 .additional__desr--bear::before {
-  background-image: url("../img/bear.png");
+  background-image: url("../img/bear.webp");
 }
 
 .additional__desr--sweet::before {
-  background-image: url("../img/raffaello.png");
+  background-image: url("../img/raffaello.webp");
 }
 
 .additional__desr--card::before {
-  background-image: url("../img/card.png");
+  background-image: url("../img/card.webp");
 }
 
 .additional__subtitle {
@@ -2252,7 +2260,7 @@ a {
             animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
-    background-image: url("../img/decor-1.png");
+    background-image: url("../img/decor-1.webp");
   }
 
   .decor__2 {
@@ -2266,7 +2274,7 @@ a {
             animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
-    background-image: url("../img/decor-2.png");
+    background-image: url("../img/decor-2.webp");
   }
 }
 @media (min-width: 960px) {

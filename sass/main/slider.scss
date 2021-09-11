@@ -78,6 +78,9 @@
   margin: 0 auto;
   overflow: hidden;
 
+  user-select: none;
+  touch-action: pan-y;
+
   margin-bottom: 20px;
 }
 
@@ -107,7 +110,17 @@
 
   transition-property: transform;
   transition-duration: 1s;
+
+  &--grab {
+    cursor: grab;
+  }
+
+  &--grabbing {
+    cursor: grabbing;
+  }
 }
+
+
 
 .slider__unit {
   border: 4px solid transparent;
@@ -129,6 +142,7 @@
   width: 250px;
   height: auto;
 
+  pointer-events: none;
   display: block;
   margin: auto;
 }

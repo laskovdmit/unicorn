@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сладкие подарки из Kinder - Unicorn</title>
     <link href="css/normalize.css" type="text/css" rel="stylesheet">
-    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.min.css" type="text/css" rel="stylesheet">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=dbab1e1d-250c-47fb-9b13-c5a16e6bb046&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body class="page">
@@ -15,9 +15,9 @@
   <div class="header__wrapper page__container">
     <a class="header__adress" href="https://yandex.ru/maps/-/CCUiiPVa~D" target="_blank">Уфа, ул. Ленина 74</a>
     <picture>
-      <source media="(min-width: 960px)" srcset="img/logo-desktop.png">
-      <source media="(min-width: 640px)" srcset="img/logo-tablet.png">
-      <img class="header__logo" src="img/logo-mobile.png" alt="Логотип Unicorn">
+      <source media="(min-width: 960px)" srcset="img/logo-desktop.webp">
+      <source media="(min-width: 640px)" srcset="img/logo-tablet.webp">
+      <img class="header__logo" src="img/logo-mobile.webp" alt="Логотип Unicorn">
     </picture>
     <div class="header__nav">
       <div class="header__order-call">
@@ -47,9 +47,9 @@
     <div class="promo__wrapper page__container">
       <div class="promo__gift">
         <picture>
-          <source media="(min-width: 960px)" srcset="img/gift-desktop.png">
-          <source media="(min-width: 640px)" srcset="img/gift-tablet.png">
-          <img class="promo__img" src="img/gift-mobile.png" alt="Логотип Unicorn">
+          <source media="(min-width: 960px)" srcset="img/gift-desktop.webp">
+          <source media="(min-width: 640px)" srcset="img/gift-tablet.webp">
+          <img class="promo__img" src="img/gift-mobile.webp" alt="Логотип Unicorn">
         </picture>
       </div>
       <div class="promo__offer offer">
@@ -61,19 +61,19 @@
         <div class="offer__advantages advantages">
           <div class="advantages__item">
             <div class="advantages__container">
-              <img class="advantages__icon" width="80" height="80" src="img/package.png">
+              <img class="advantages__icon" width="80" height="80" src="img/package.webp">
             </div>
             <p class="advantages__subtitle subtitle subtitle--center">Упакуем в слюду и фирменный пакет</p>
           </div>
           <div class="advantages__item">
             <div class="advantages__container">
-              <img class="advantages__icon" width="80" height="80" src="img/delivery.png">
+              <img class="advantages__icon" width="80" height="80" src="img/delivery.webp">
             </div>
             <p class="advantages__subtitle subtitle subtitle--center">Бесплатная доставка по Уфе</p>
           </div>
           <div class="advantages__item">
             <div class="advantages__container">
-              <img class="advantages__icon" width="80" height="80" src="img/time.png">
+              <img class="advantages__icon" width="80" height="80" src="img/time.webp">
             </div>
             <p class="advantages__subtitle subtitle subtitle--center">Сделаем и доставим в день заказа</p>
           </div>
@@ -104,8 +104,8 @@
       </div>
       <div class="about__owner">
         <picture>
-          <source media="(min-width: 640px)" srcset="img/owner-tablet.jpg">
-          <img class="about__img" src="img/owner-mobile.jpg" alt="Основатель магазина подарков">
+          <source media="(min-width: 640px)" srcset="img/owner-tablet.webp">
+          <img class="about__img" src="img/owner-mobile.webp" alt="Основатель магазина подарков">
         </picture>
       </div>
     </div>
@@ -159,7 +159,9 @@
                 <p class="contact__text">Ежедневно с 08.00 до 22.00 <br> или свяжитесь в мессенджерах:</p>
                 <div class="contact__social">
                   <a class="contact__item" href="https://wa.me/79871401648" target="_blank">
-                    <img class="contact__icon card-social__icon--whatsapp" width="28" height="28" src="img/icon-whatsapp.svg" alt="Написать в WhatsApp">
+                    <div class="contact__icon card-social__icon--whatsapp">
+                      <include src="img/whatsapp.svg"></include>
+                    </div>
                     <p class="contact__title">WhatsApp</p>
                   </a>
                 </div>
@@ -176,45 +178,45 @@
       <div class="reviews__slider slider">
         <div class="slider__arrow slider__arrow-prev" tabindex="0"></div>
         <div class="slider__wrapper">
-          <ul class="slider__list">
+          <ul class="slider__list slider__list--grab">
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review1.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review1.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review2.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review2.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review3.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review3.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review4.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review4.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review1.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review1.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review2.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review2.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review3.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review3.webp" alt="Катя">
               </div>
             </li>
             <li class="slider__unit">
               <div class="slider__unit-wrapper">
-                <img class="slider__photo" src="img/review4.jpg" alt="Катя">
+                <img class="slider__photo" src="img/review4.webp" alt="Катя">
               </div>
             </li>
           </ul>
@@ -292,7 +294,9 @@
             <p class="contact__text">Ежедневно с 08.00 до 22.00 <br> или свяжитесь в мессенджерах:</p>
             <div class="contact__social">
               <a class="contact__item" href="https://wa.me/79871401648" target="_blank">
-                <img class="contact__icon card-social__icon--whatsapp" width="28" height="28" src="img/icon-whatsapp.svg" alt="Написать в WhatsApp">
+                <div class="contact__icon card-social__icon--whatsapp">
+                  <include src="img/whatsapp.svg"></include>
+                </div>
                 <p class="contact__title">WhatsApp</p>
               </a>
             </div>
@@ -311,7 +315,7 @@
 <footer data-section class="page__footer footer">
   <div class="footer__wrapper page__container">
     <a class="footer__adress" href="https://yandex.ru/maps/-/CCUiiPVa~D" target="_blank">Уфа, ул. Ленина 74</a>
-    <img class="footer__logo" src="img/logo-desktop.png" width="230" height="81" alt="Логотип Unicorn">
+    <img class="footer__logo" src="img/logo-desktop.webp" width="230" height="81" alt="Логотип Unicorn">
     <div class="footer__order-call">
       <a class="footer__number" href="tel:+79871401648">+7 (987) 140-16-48</a>
       <button class="footer__order-btn order__call" type="button">Заказать звонок</button>
@@ -323,9 +327,13 @@
       <a class="footer__privacy privacy-policy" tabindex="0">Политика конфидециальности</a>
     </div>
     <div class="socials">
-      <a class="socials__item socials__vk" href="https://vk.com/unicorn_ufa" target="_blank"></a>
-      <a class="socials__item socials__inst" href="https://www.instagram.com/unicorn_ufa/" target="_blank"></a>
-      <a class="socials__item socials__whatsapp" href="https://wa.me/79871401648" target="_blank"></a>
+      <a class="socials__item" href="https://vk.com/unicorn_ufa" target="_blank">
+        <include src="img/vk.svg"></include></a>
+      <a class="socials__item" href="https://www.instagram.com/unicorn_ufa/" target="_blank">
+        <include src="img/instagram.svg"></include></a>
+      <a class="socials__item" href="https://wa.me/79871401648" target="_blank">
+        <include src="img/whatsapp.svg"></include>
+      </a>
     </div>
   </div>
 </footer>

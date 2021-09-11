@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "mainImg": "img/products/kinder-nest/main.jpg",
+      "mainImg": "img/products/kinder-nest/main.webp",
       "mainAltimg": "Гнездышко \"Kinder\"",
       "name": "Гнездышко \"Kinder\"",
       "fullDescr": "В составе: \n 6 яиц kinder сюрприз, \n 26 шоколадок kinder chocolate, \n декоративный наполнитель, \n декоративная лента, \n шоколад \"Алёнка\", \n Подарок упаковывается в прозрачную пленку с бантиком и подарочный крафтовый пакет",
@@ -10,21 +10,21 @@
       "price": "2100",
       "allImgs": [
         {
-          "secondImg": "img/products/kinder-nest/second-1.jpg",
+          "secondImg": "img/products/kinder-nest/second-1.webp",
           "secondAltimg": "Гнездышко \"Kinder\""
         },
         {
-          "secondImg": "img/products/kinder-nest/second-2.jpg",
+          "secondImg": "img/products/kinder-nest/second-2.webp",
           "secondAltimg": "Гнездышко \"Kinder\""
         },
         {
-          "secondImg": "img/products/kinder-nest/second-3.jpg",
+          "secondImg": "img/products/kinder-nest/second-3.webp",
           "secondAltimg": "Гнездышко \"Kinder\""
         }
       ]
     },
     {
-      "mainImg": "img/products/assorti/main.jpg",
+      "mainImg": "img/products/assorti/main.webp",
       "mainAltimg": "Подарок \"Ассорти\"",
       "name": "Подарок \"Ассорти\"",
       "fullDescr": "В составе: kinder шоколад 1 упаковка, \n kinder bueno 1 шт., \n  delice 1 шт., \n kinder сюрприз 1 шт., \n игрушка медведь 1шт., \n конфеты raffaello 10 шт., \n коробка круглая розовая 1шт., \n Деревянная надпись - люблю, любимой, по желанию в подарок упаковочная пленка и бант",
@@ -33,21 +33,21 @@
       "price": "1900",
       "allImgs": [
         {
-          "secondImg": "img/products/assorti/second-1.jpg",
+          "secondImg": "img/products/assorti/second-1.webp",
           "secondAltimg": "Подарок \"Ассорти\""
         },
         {
-          "secondImg": "img/products/assorti/second-2.jpg",
+          "secondImg": "img/products/assorti/second-2.webp",
           "secondAltimg": "Подарок \"Ассорти\""
         },
         {
-          "secondImg": "img/products/assorti/second-3.jpg",
+          "secondImg": "img/products/assorti/second-3.webp",
           "secondAltimg": "Подарок \"Ассорти\""
         }
       ]
     },
     {
-      "mainImg": "img/products/raffaello-nest/main.jpg",
+      "mainImg": "img/products/raffaello-nest/main.webp",
       "mainAltimg": "Гнездышко \"Raffaello\"",
       "name": "Гнездышко \"Raffaello\"",
       "fullDescr": "В составе: 15 конфет Раффаэлло, \n 26 шоколадок Киндер, \n декоративная лента, \n декоративный наполнитель, \n деревянная надпись - люблю, любимой в ассортименте, \n упаковка в декоративную пленку, \n бумажный подарочный пакет",
@@ -56,21 +56,21 @@
       "price": "1700",
       "allImgs": [
         {
-          "secondImg": "img/products/raffaello-nest/second-1.jpg",
+          "secondImg": "img/products/raffaello-nest/second-1.webp",
           "secondAltimg": "Гнездышко \"Raffaello\""
         },
         {
-          "secondImg": "img/products/raffaello-nest/second-2.jpg",
+          "secondImg": "img/products/raffaello-nest/second-2.webp",
           "secondAltimg": "Гнездышко \"Raffaello\""
         },
         {
-          "secondImg": "img/products/raffaello-nest/second-3.jpg",
+          "secondImg": "img/products/raffaello-nest/second-3.webp",
           "secondAltimg": "Гнездышко \"Raffaello\""
         }
       ]
     },
     {
-      "mainImg": "img/products/lovebox/main.jpg",
+      "mainImg": "img/products/lovebox/main.webp",
       "mainAltimg": "LoveBox",
       "name": "LoveBox",
       "fullDescr": "В составе: kinder bueno, \n kinder delice, \n kinder surprise, \n raffaello, \n коробка, \n открытка",
@@ -79,21 +79,21 @@
       "price": "1100",
       "allImgs": [
         {
-          "secondImg": "img/products/lovebox/second-1.jpg",
+          "secondImg": "img/products/lovebox/second-1.webp",
           "secondAltimg": "LoveBox"
         },
         {
-          "secondImg": "img/products/lovebox/second-2.jpg",
+          "secondImg": "img/products/lovebox/second-2.webp",
           "secondAltimg": "LoveBox"
         },
         {
-          "secondImg": "img/products/lovebox/second-3.jpg",
+          "secondImg": "img/products/lovebox/second-3.webp",
           "secondAltimg": "LoveBox"
         }
       ]
     },
     {
-      "mainImg": "img/products/kinder-heart-bear/main.jpg",
+      "mainImg": "img/products/kinder-heart-bear/main.webp",
       "mainAltimg": "Сердце Kinder с медведем",
       "name": "Сердце Kinder с медведем",
       "fullDescr": "В составе: медведь мягкий (расцветки в ассорименте), \n 6 яиц kinder сюрприз, \n 26 шоколадок kinder chocolate, \n лента красная, \n декоративный бант, \n декоративный наполнитель, \n портативная гирлянда на батарейках",
@@ -102,20 +102,20 @@
       "price": "2800",
       "allImgs": [
         {
-          "secondImg": "img/products/kinder-heart-bear/second-1.jpg",
+          "secondImg": "img/products/kinder-heart-bear/second-1.webp",
           "secondAltimg": "Сердце Kinder с медведем"
         },
         {
-          "secondImg": "img/products/kinder-heart-bear/second-2.jpg",
+          "secondImg": "img/products/kinder-heart-bear/second-2.webp",
           "secondAltimg": "Сердце Kinder с медведем"
         },
         {
-          "secondImg": "img/products/kinder-heart-bear/second-3.jpg",
+          "secondImg": "img/products/kinder-heart-bear/second-3.webp",
           "secondAltimg": "Сердце Kinder с медведем"
         }
       ]
     },{
-      "mainImg": "img/products/rabbit/main.jpg",
+      "mainImg": "img/products/rabbit/main.webp",
       "mainAltimg": "Зайка",
       "name": "Зайка",
       "fullDescr": "В составе: 1 Kinder bueno, \n 5 Raffaello, \n 2 kinder сюрприз, \n 1 Открытка, \n 1 Красивая коробочка",
@@ -124,21 +124,21 @@
       "price": "1100",
       "allImgs": [
         {
-          "secondImg": "img/products/rabbit/second-1.jpg",
+          "secondImg": "img/products/rabbit/second-1.webp",
           "secondAltimg": "Зайка"
         },
         {
-          "secondImg": "img/products/rabbit/second-2.jpg",
+          "secondImg": "img/products/rabbit/second-2.webp",
           "secondAltimg": "Зайка"
         },
         {
-          "secondImg": "img/products/rabbit/second-3.jpg",
+          "secondImg": "img/products/rabbit/second-3.webp",
           "secondAltimg": "Зайка"
         }
       ]
     },
     {
-      "mainImg": "img/products/kinder-nest-bear/main.jpg",
+      "mainImg": "img/products/kinder-nest-bear/main.webp",
       "mainAltimg": "Гнездышко Kinder с медвежонком",
       "name": "Гнездышко Kinder с медвежонком",
       "fullDescr": "В составе: 26 kinder шоколадок, \n очаровательный мишка, \n конфеты raffaello, \n 3 kinder сюрприза",
@@ -147,21 +147,21 @@
       "price": "2300",
       "allImgs": [
         {
-          "secondImg": "img/products/kinder-nest-bear/second-1.jpg",
+          "secondImg": "img/products/kinder-nest-bear/second-1.webp",
           "secondAltimg": "Гнездышко Kinder с медвежонком"
         },
         {
-          "secondImg": "img/products/kinder-nest-bear/second-2.jpg",
+          "secondImg": "img/products/kinder-nest-bear/second-2.webp",
           "secondAltimg": "Гнездышко Kinder с медвежонком"
         },
         {
-          "secondImg": "img/products/kinder-nest-bear/second-3.jpg",
+          "secondImg": "img/products/kinder-nest-bear/second-3.webp",
           "secondAltimg": "Гнездышко Kinder с медвежонком"
         }
       ]
     },
     {
-      "mainImg": "img/products/kinder-heart-assorti/main.jpg",
+      "mainImg": "img/products/kinder-heart-assorti/main.webp",
       "mainAltimg": "Сердце Kinder Ассорти",
       "name": "Сердце Kinder Ассорти",
       "fullDescr": "В составе: 28-30 kinder шоколадок, \n 4 kinder сюрприза, \n 1 kinder bueno, \n 1 kinder delice, \n 1 kinder maxi, \n 1 надпись топпер на выбор (в ассортименте), \n 1 шоколадка \"Алёнка\" в подарочной упаковке",
@@ -170,21 +170,21 @@
       "price": "2100",
       "allImgs": [
         {
-          "secondImg": "img/products/kinder-heart-assorti/second-1.jpg",
+          "secondImg": "img/products/kinder-heart-assorti/second-1.webp",
           "secondAltimg": "Сердце Kinder Ассорти"
         },
         {
-          "secondImg": "img/products/kinder-heart-assorti/second-2.jpg",
+          "secondImg": "img/products/kinder-heart-assorti/second-2.webp",
           "secondAltimg": "Сердце Kinder Ассорти"
         },
         {
-          "secondImg": "img/products/kinder-heart-assorti/second-3.jpg",
+          "secondImg": "img/products/kinder-heart-assorti/second-3.webp",
           "secondAltimg": "Сердце Kinder Ассорти"
         }
       ]
     },
     {
-      "mainImg": "img/products/happybox/main.jpg",
+      "mainImg": "img/products/happybox/main.webp",
       "mainAltimg": "Коробка счастья",
       "name": "Коробка счастья",
       "fullDescr": "В составе: kinder bueno, \n kinder delice, \n конфеты raffaello, \n шоколадка \"Аленка\" в подарочной упаковке, \n открытка, \n круглая коробка, \n декоративный наполнитель, \n декоративная лента",
@@ -193,21 +193,21 @@
       "price": "1200",
       "allImgs": [
         {
-          "secondImg": "img/products/happybox/second-1.jpg",
+          "secondImg": "img/products/happybox/second-1.webp",
           "secondAltimg": "Коробка счастья"
         },
         {
-          "secondImg": "img/products/happybox/second-2.jpg",
+          "secondImg": "img/products/happybox/second-2.webp",
           "secondAltimg": "Коробка счастья"
         },
         {
-          "secondImg": "img/products/happybox/second-3.jpg",
+          "secondImg": "img/products/happybox/second-3.webp",
           "secondAltimg": "Коробка счастья"
         }
       ]
     },
     {
-      "mainImg": "img/products/happy-birthsday/main.jpg",
+      "mainImg": "img/products/happy-birthsday/main.webp",
       "mainAltimg": "Торт \"С днем рождения\"",
       "name": "Торт \"С днем рождения\"",
       "fullDescr": "В составе: 30 kinder шоколадок, \n Коробка raffaello. \n Внутри первого этажа: \n 5 kinder сюрпризов, \n 1 kinder bueno, \n 2 kinder delice, \n 5 raffaello",
@@ -216,21 +216,21 @@
       "price": "2800",
       "allImgs": [
         {
-          "secondImg": "img/products/happy-birthsday/second-1.jpg",
+          "secondImg": "img/products/happy-birthsday/second-1.webp",
           "secondAltimg": "Торт \"С днем рождения\""
         },
         {
-          "secondImg": "img/products/happy-birthsday/second-2.jpg",
+          "secondImg": "img/products/happy-birthsday/second-2.webp",
           "secondAltimg": "Торт \"С днем рождения\""
         },
         {
-          "secondImg": "img/products/happy-birthsday/second-3.jpg",
+          "secondImg": "img/products/happy-birthsday/second-3.webp",
           "secondAltimg": "Торт \"С днем рождения\""
         }
       ]
     },
     {
-      "mainImg": "img/products/bigheart/main.jpg",
+      "mainImg": "img/products/bigheart/main.webp",
       "mainAltimg": "Огромное сердце Kinder",
       "name": "Огромное сердце Kinder",
       "fullDescr": "В составе: 11 киндер surprise, \n 4 kinder bueno, \n 5 kinder delis, \n 15 конфет raffaello",
@@ -239,15 +239,15 @@
       "price": "3700",
       "allImgs": [
         {
-          "secondImg": "img/products/bigheart/second-1.jpg",
+          "secondImg": "img/products/bigheart/second-1.webp",
           "secondAltimg": "Огромное сердце Kinder"
         },
         {
-          "secondImg": "img/products/bigheart/second-2.jpg",
+          "secondImg": "img/products/bigheart/second-2.webp",
           "secondAltimg": "Огромное сердце Kinder"
         },
         {
-          "secondImg": "img/products/bigheart/second-3.jpg",
+          "secondImg": "img/products/bigheart/second-3.webp",
           "secondAltimg": "Огромное сердце Kinder"
         }
       ]

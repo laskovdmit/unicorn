@@ -53,6 +53,8 @@
   .notlike__inner {
     display: flex;
     overflow: hidden;
+
+    min-height: 549px;
   }
 
   .notlike__bg {
@@ -60,7 +62,7 @@
     flex-basis: 50%;
     flex-grow: 1;
 
-    background-image: url('../img/client.png');
+    background-image: url('../img/client.webp');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
