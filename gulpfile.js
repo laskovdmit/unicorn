@@ -37,10 +37,10 @@ gulp.task('style', function(){
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss([ autoprefixer() ]))
   .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('./build/css'))
+  .pipe(gulp.dest('./css'))
   .pipe(minify())
   .pipe(rename('style.min.css'))
-  .pipe(gulp.dest('./build/css'));
+  .pipe(gulp.dest('./css'));
 });
 
 gulp.task('html', function() {

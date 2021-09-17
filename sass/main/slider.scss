@@ -74,7 +74,7 @@
 }
 
 .slider__wrapper {
-  width: 250px;
+  width: 258px;
   margin: 0 auto;
   overflow: hidden;
 
@@ -108,8 +108,10 @@
   display: flex;
   justify-content: space-between;
 
-  transition-property: transform;
-  transition-duration: 1s;
+  &--animation {
+    transition-property: transform;
+    transition-duration: 1s;
+  }
 
   &--grab {
     cursor: grab;

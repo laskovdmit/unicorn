@@ -344,15 +344,86 @@ window.addEventListener('DOMContentLoaded', () => {
     buildToggle();
   });
 
-  sliderList.addEventListener('mousedown', () => {
-    sliderList.classList.remove('slider__list--grab');
-    sliderList.classList.add('slider__list--grabbing');
-  });
 
-  sliderList.addEventListener('mouseup', () => {
-    sliderList.classList.remove('slider__list--grabbing');
-    sliderList.classList.add('slider__list--grab');
-  });
+  //Свайп слайдера
+  let posInit = 0,
+      posX1 = 0,
+      posX2 = 0;
+
+  const getEvent = () => event.type.search('touch') !== -1 ? event.touches[0] : event;
+  const toggleSlide = (state) => {
+    if (state === true) {
+      sliderList.classList.remove('slider__list--animation');
+      sliderList.classList.remove('slider__list--grab');
+      sliderList.classList.add('slider__list--grabbing');
+    } else {
+      sliderList.removeEventListener('touchmove', swipeAction);
+      sliderList.removeEventListener('mousemove', swipeAction);
+
+      sliderList.classList.add('slider__list--animation');
+      sliderList.classList.add('slider__list--grab');
+      sliderList.classList.remove('slider__list--grabbing');
+    }
+  };
+
+  function swipeStart () {
+    toggleSlide(true);
+
+    let evt = getEvent();
+
+    posInit = posX1 = evt.clientX;
+
+    sliderList.addEventListener('touchmove', swipeAction);
+    sliderList.addEventListener('mousemove', swipeAction);
+
+    sliderList.addEventListener('mouseup', () => {
+      toggleSlide(false);
+      showCurrentSlide();
+    }, {once: true});
+
+
+    sliderList.addEventListener('touchend', () => {
+      toggleSlide(false);
+      showCurrentSlide();
+    }, {once: true});
+  }
+
+  function swipeAction () {
+    let evt = getEvent(),
+        style = sliderList.style.transform,
+        transform = +style.match(/[-0-9.]+(?=px)/)[0];
+
+    const toggle = document.querySelectorAll('.slider__toggle');
+
+    posX2 = posX1 - evt.clientX;
+    posX1 = evt.clientX;
+
+    sliderList.style.transform = `translate(${transform - posX2}px)`;
+
+    if (posInit - posX1 > 100) {
+      currentSlide += 1;
+
+      if (currentSlide === toggle.length) {
+        currentSlide -= 1;
+      }
+
+      showCurrentSlide();
+      toggleSlide(false);
+    } else if (posInit - posX1 < -100) {
+      currentSlide -= 1;
+
+      if (currentSlide < 0) {
+        currentSlide += 1;
+      }
+
+      showCurrentSlide();
+      toggleSlide(false);
+    }
+
+  }
+
+  sliderList.addEventListener('mousedown', swipeStart);
+  sliderList.addEventListener('touchstart', swipeStart);
 
 
   //Показ часто задаваемых вопросов
