@@ -11,6 +11,15 @@ window.addEventListener('DOMContentLoaded', () => {
     if (header.classList.contains('header--closed')) {
       header.classList.remove('header--closed');
       header.classList.add('header--opened');
+
+      setTimeout(() => {
+        window.addEventListener('click', (e) => {
+          if (e.target !== menu) {
+            header.classList.remove('header--opened');
+            header.classList.add('header--closed');
+          }
+        }, {once: true});
+      }, 100);
     } else {
       header.classList.remove('header--opened');
       header.classList.add('header--closed');
@@ -530,41 +539,53 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   //Слайдер на эране "Подробнее"
-  const minSlides = document.querySelectorAll('.swiper__slide-min'),
-        bigSlides = document.querySelectorAll('.swiper__slide-big'),
-        bigSlidesWrapper = document.querySelector('.swiper__wrapper-big');
+  function showMinSlide (slides, item) {
+    slides.forEach(mslide => {
+      mslide.classList.remove('swiper__slide-min--active');
+    });
+    item.classList.add('swiper__slide-min--active');
+  }
 
-  function changeDetailsSlide (minSlides, bigSlides, bigSlidesWrapper) {
-    minSlides.forEach((item, i) => {
-      item.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') {
-          e.preventDefault();
 
+  function changeDetailsSlide (state, minSlides, bigSlides, bigSlidesWrapper) {
+    function resizeSlider ()  {
+      if (window.innerWidth < 960 && bigSlidesWrapper.style.transform !== '') {
+        console.log('done');
+        bigSlidesWrapper.style.transform = '';
+        showMinSlide(minSlides, minSlides[0]);
+      }
+    }
+
+    //Удалить обработчик события, если закрывается модальное окно?
+    if (state === 'close') {
+      console.log('Закрыли');
+      window.removeEventListener('resize', resizeSlider);
+    } else {
+      minSlides.forEach((item, i) => {
+        item.addEventListener('keydown', (e) => {
+          if (e.code === 'Space') {
+            e.preventDefault();
+
+            if (!item.classList.contains('swiper__slide-min--active')) {
+              showMinSlide(minSlides, item);
+
+              bigSlidesWrapper.style.transform = `translate(-${i * (bigSlides[i].offsetWidth + 5)}px)`;
+            }
+          }
+        });
+
+        item.addEventListener('click', () => {
           if (!item.classList.contains('swiper__slide-min--active')) {
-            minSlides.forEach(mslide => {
-              mslide.classList.remove('swiper__slide-min--active');
-            });
-            item.classList.add('swiper__slide-min--active');
+            showMinSlide(minSlides, item);
 
             bigSlidesWrapper.style.transform = `translate(-${i * (bigSlides[i].offsetWidth + 5)}px)`;
           }
-        }
+        });
       });
 
-      item.addEventListener('click', () => {
-        if (!item.classList.contains('swiper__slide-min--active')) {
-          minSlides.forEach(mslide => {
-            mslide.classList.remove('swiper__slide-min--active');
-          });
-          item.classList.add('swiper__slide-min--active');
-
-          bigSlidesWrapper.style.transform = `translate(-${i * (bigSlides[i].offsetWidth + 5)}px)`;
-        }
-      });
-    });
+      window.addEventListener('resize', resizeSlider);
+    }
   }
-
-  changeDetailsSlide (minSlides, bigSlides, bigSlidesWrapper);
 
 
   //Создание класса товаров
@@ -584,6 +605,8 @@ window.addEventListener('DOMContentLoaded', () => {
       function closeModalWindow () {
         modalWindow.classList.add('modal--hide');
         modalWindow.classList.remove('modal--show');
+        changeDetailsSlide('close');
+
         setTimeout(() => {modalWindow.remove();}, 290);
         document.body.style.overflow = '';
       }
@@ -683,7 +706,7 @@ window.addEventListener('DOMContentLoaded', () => {
             bigSlidesWrapper = detailsWindow.querySelector('.swiper__wrapper-big'),
             orderBtn = detailsWindow.querySelector('.product__addtocart');
 
-      changeDetailsSlide (minSlides, bigSlides, bigSlidesWrapper);
+      changeDetailsSlide ('open', minSlides, bigSlides, bigSlidesWrapper);
       this.closeModal(detailsWindow, modalClose);
 
       orderBtn.addEventListener('click', () => {
@@ -741,11 +764,11 @@ window.addEventListener('DOMContentLoaded', () => {
             <p class="product__name product__name--form">${this.name}</p>
             <div class="product__oldprice product__oldprice--form">${this.oldprice}</div>
             <div class="product__price product__price--form">${this.price} руб</div>
-            <form class="purchase__form form" method="post" action="https://echo.htmlacademy.ru">
+            <form class="purchase__form form" method="post">
               <div class="form__cal purchase__cal">
                 <input class="purchase__input form__input form__name" id="form__name--purchase" type="text" name="name" placeholder="Ваше имя" minlength="3" required>
                 <label class="visually-hidden" for="form__name--purchase">Ваше имя</label>
-                <input class="purchase__input form__input form__phone" id="form__phone--purchase" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" required>
+                <input class="purchase__input form__input form__phone" id="form__phone--purchase" type="tel" name="phone" placeholder="Ваш номер телефона" pattern="^[ 0-9]+$" minlength="10" maxlength="20" required>
                 <label class="visually-hidden" for="form__phone--purchase">Ваш номер телефона</label>
                 <button class="form__btn form__btn--form btn" type="submit">Заказать</button>
                 <div class="purchase__privacy form__privacy">
@@ -1010,8 +1033,6 @@ window.addEventListener('DOMContentLoaded', () => {
         response.text();
       })
       .then(data => {
-        console.log(data);
-
         statusLoading.remove();
         statusMessage.style.maxWidth = "370px";
         statusMessage.innerHTML = `

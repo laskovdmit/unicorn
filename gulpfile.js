@@ -12,6 +12,9 @@ const webp = require('gulp-webp');
 const rename = require('gulp-rename');
 const del = require('del');
 
+// const path = './build';
+const path = '/OpenServer/domains/build';
+
 gulp.task('clean', function() {
   return del('build');
 });
@@ -22,13 +25,13 @@ gulp.task('copy', function() {
     './img/**',
     './js/**',
     './css/**',
-    './*.html',
+    // './*.html',
     './db.json',
     'server.php'
   ], {
     base: '.'
   })
-  .pipe(gulp.dest('./build'));
+  .pipe(gulp.dest(path));
 });
 
 gulp.task('style', function(){
@@ -48,22 +51,22 @@ gulp.task('html', function() {
   .pipe(posthtml([
     include()
   ]))
-  .pipe(gulp.dest('./build'));
+  .pipe(gulp.dest(path));
 });
 
 gulp.task('build', gulp.series(
   'clean',
-  'copy',
   'style',
   'html',
+  'copy',
   function (done) {
     done();
   }
 ));
 
 gulp.task('watch', function() {
-    gulp.watch('./sass/**/*.scss', gulp.series('style'));
-    gulp.watch('*.html', gulp.series('html'));
+    gulp.watch('./sass/**/*.scss', gulp.series('clean', 'style', 'copy'));
+    gulp.watch('*.html', gulp.series('clean', 'html', 'copy'));
 });
 
 gulp.task('webp', function() {

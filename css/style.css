@@ -125,6 +125,14 @@ a {
   text-decoration: none;
 }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
 .btn {
   font-family: inherit;
   font-size: 16px;
@@ -1600,6 +1608,7 @@ a {
 .footer__logo {
   display: block;
   cursor: pointer;
+  pointer-events: auto;
   width: 230px;
   height: 81px;
   margin-bottom: 10px;
